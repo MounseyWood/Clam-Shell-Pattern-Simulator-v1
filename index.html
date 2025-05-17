@@ -217,513 +217,509 @@
             visibility: visible;
             opacity: 1;
         }
-      /* Additional CSS Styles */
-
-/* Add this to the style section in the head */
-
-.color-pickers {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.color-picker {
-    flex: 1;
-}
-
-.color-picker label {
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-/* Animation controls */
-.animation-controls {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 600px;
-    margin-top: 15px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    padding: 10px;
-}
-
-.animation-controls button {
-    width: auto;
-    margin-top: 0;
-    padding: 8px 12px;
-    font-size: 14px;
-}
-
-.animation-controls .play-pause {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--ku-blue);
-    margin-right: 10px;
-    padding: 0;
-}
-
-.animation-controls .play-pause:hover {
-    background-color: var(--ku-navy);
-}
-
-.animation-controls .play-pause svg {
-    width: 20px;
-    height: 20px;
-    margin: 0;
-}
-
-.animation-controls .speed-controls {
-    display: flex;
-    align-items: center;
-    margin: 0 10px;
-}
-
-.animation-controls .speed-controls button {
-    margin: 0 2px;
-    background-color: #ddd;
-    color: #333;
-}
-
-.animation-controls .speed-controls button:hover,
-.animation-controls .speed-controls button.active {
-    background-color: var(--ku-blue);
-    color: white;
-}
-
-.animation-controls .timeline {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    margin: 0 10px;
-}
-
-.animation-controls .timeline-slider {
-    width: 100%;
-    margin: 0;
-}
-
-.animation-controls .time-display {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    margin-top: 2px;
-}
-
-/* Environmental history graph */
-.environment-history {
-    width: 100%;
-    max-width: 600px;
-    margin-top: 15px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    padding: 15px;
-}
-
-.environment-history h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-.graph-container {
-    position: relative;
-    height: 100px;
-    border-bottom: 1px solid #ccc;
-    border-left: 1px solid #ccc;
-    margin-top: 20px;
-}
-
-.graph-y-axis {
-    position: absolute;
-    left: -25px;
-    top: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-size: 10px;
-}
-
-.graph-line {
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    background-color: rgba(0,0,0,0.1);
-}
-
-.data-line {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-}
-
-.data-point {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    margin-left: -2.5px;
-    margin-top: -2.5px;
-}
-
-.data-point.temperature {
-    background-color: var(--ku-orange);
-}
-
-.data-point.salinity {
-    background-color: var(--ku-blue);
-}
-
-.data-point.seasonal {
-    background-color: var(--ku-green);
-}
-
-.data-point.microplastic {
-    background-color: var(--ku-purple);
-}
-
-.data-point.acidification {
-    background-color: var(--ku-tan);
-}
-
-.climate-trend {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-top: 2px dashed rgba(255, 0, 0, 0.4);
-    opacity: 0;
-    transition: opacity 0.5s, transform 0.5s;
-}
-
-.graph-legend {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 15px;
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    margin-right: 10px;
-    margin-bottom: 5px;
-}
-
-.legend-color {
-    width: 12px;
-    height: 12px;
-    border-radius: 3px;
-    margin-right: 5px;
-}
-
-.legend-item:nth-child(1) .legend-color {
-    background-color: var(--ku-orange);
-}
-
-.legend-item:nth-child(2) .legend-color {
-    background-color: var(--ku-blue);
-}
-
-.legend-item:nth-child(3) .legend-color {
-    background-color: var(--ku-green);
-}
-
-.legend-item:nth-child(4) .legend-color {
-    background-color: var(--ku-purple);
-}
-
-.legend-item:nth-child(5) .legend-color {
-    background-color: var(--ku-tan);
-}
-
-/* Growth information display */
-.growth-info {
-    width: 100%;
-    max-width: 600px;
-    margin-top: 15px;
-    background-color: var(--ku-light-blue);
-    border-radius: 8px;
-    padding: 15px;
-}
-
-.growth-info h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: var(--ku-navy);
-}
-
-.growth-info p {
-    margin: 5px 0;
-    font-size: 14px;
-}
-
-.growth-event {
-    padding: 8px;
-    margin-top: 8px;
-    background-color: rgba(255,255,255,0.7);
-    border-radius: 4px;
-    border-left: 4px solid var(--ku-green);
-}
-
-.growth-event.temperature {
-    border-left-color: var(--ku-orange);
-}
-
-.growth-event.salinity {
-    border-left-color: var(--ku-blue);
-}
-
-.growth-event.seasonal {
-    border-left-color: var(--ku-green);
-}
-
-.growth-event.microplastic {
-    border-left-color: var(--ku-purple);
-}
-
-.growth-event.acidification {
-    border-left-color: var(--ku-tan);
-}
-
-.growth-event .timestamp {
-    font-weight: bold;
-    font-size: 12px;
-    color: #666;
-}
-
-/* Age bands visualization */
-.age-bands {
-    width: 100%;
-    max-width: 600px;
-    height: 20px;
-    margin-top: 5px;
-    display: flex;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-.age-band {
-    height: 100%;
-    flex-grow: 1;
-    transition: background-color 0.3s;
-}
-
-/* Pattern blend visualization */
-.pattern-blend {
-    width: 100%;
-    max-width: 600px;
-    margin-top: 15px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    padding: 15px;
-}
-
-.pattern-blend h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-.blend-bars {
-    display: flex;
-    width: 100%;
-    height: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 10px;
-}
-
-.blend-bar {
-    height: 100%;
-    transition: width 0.5s;
-}
-
-.blend-bar.cellular {
-    background-color: var(--ku-orange);
-}
-
-.blend-bar.wave {
-    background-color: var(--ku-blue);
-}
-
-.blend-bar.growth {
-    background-color: var(--ku-green);
-}
-
-.blend-labels {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5px;
-    font-size: 12px;
-}
-
-.blend-label {
-    text-align: center;
-    flex: 1;
-}
-
-/* Climate badge */
-.climate-badge {
-    display: inline-block;
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: bold;
-    color: white;
-    margin-left: 5px;
-}
-
-.climate-badge.pre-industrial {
-    background-color: var(--ku-green);
-}
-
-.climate-badge.current {
-    background-color: var(--ku-blue);
-}
-
-.climate-badge.near-future {
-    background-color: var(--ku-orange);
-}
-
-.climate-badge.worst-case {
-    background-color: #d9534f;
-}
-
-/* Pattern blend badges */
-.pattern-badge {
-    display: inline-block;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 11px;
-    color: white;
-    margin-right: 4px;
-}
-
-.pattern-badge.cellular {
-    background-color: var(--ku-orange);
-}
-
-.pattern-badge.wave {
-    background-color: var(--ku-blue);
-}
-
-.pattern-badge.growth {
-    background-color: var(--ku-green);
-}
-
-/* Acidification indicator */
-.acid-indicator {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.acid-indicator-bar {
-    flex-grow: 1;
-    height: 6px;
-    background: linear-gradient(to right, var(--ku-green), var(--ku-orange), #d9534f);
-    border-radius: 3px;
-    margin: 0 10px;
-}
-
-.acid-indicator-marker {
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 50%;
-    position: relative;
-    left: 0%;
-    transform: translateX(-50%);
-    transition: left 0.5s;
-}
-
-/* Additional UI elements */
-.sr-status {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-.hidden-canvas {
-    display: none;
-}
-  /* Tabs CSS */
-
-/* Add this to the CSS section */
-
-.tabs {
-    width: 100%;
-    max-width: 600px;
-    margin-top: 15px;
-}
-
-.tab-buttons {
-    display: flex;
-    overflow-x: auto;
-}
-
-.tab-button {
-    padding: 8px 15px;
-    background-color: #e0e0e0;
-    border: none;
-    border-radius: 5px 5px 0 0;
-    cursor: pointer;
-    color: #333;
-    font-weight: 500;
-    margin-right: 2px;
-    width: auto;
-}
-
-.tab-button.active {
-    background-color: var(--ku-navy);
-    color: white;
-}
-
-.tab-content {
-    background-color: #f5f5f5;
-    padding: 15px;
-    border-radius: 0 5px 5px 5px;
-}
-
-.tab-panel {
-    display: none;
-}
-
-.tab-panel.active {
-    display: block;
-}
-
-.tab-panel h3 {
-    margin-top: 0;
-    color: var(--ku-navy);
-}
-
-.tab-panel ul {
-    padding-left: 20px;
-}
-
-.tab-panel li {
-    margin-bottom: 8px;
-}    
+
+        /* CSS from Part 2 */
+        .color-pickers {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .color-picker {
+            flex: 1;
+        }
+
+        .color-picker label {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        /* Animation controls */
+        .animation-controls {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 15px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .animation-controls button {
+            width: auto;
+            margin-top: 0;
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+
+        .animation-controls .play-pause {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--ku-blue);
+            margin-right: 10px;
+            padding: 0;
+        }
+
+        .animation-controls .play-pause:hover {
+            background-color: var(--ku-navy);
+        }
+
+        .animation-controls .play-pause svg {
+            width: 20px;
+            height: 20px;
+            margin: 0;
+        }
+
+        .animation-controls .speed-controls {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        .animation-controls .speed-controls button {
+            margin: 0 2px;
+            background-color: #ddd;
+            color: #333;
+        }
+
+        .animation-controls .speed-controls button:hover,
+        .animation-controls .speed-controls button.active {
+            background-color: var(--ku-blue);
+            color: white;
+        }
+
+        .animation-controls .timeline {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            margin: 0 10px;
+        }
+
+        .animation-controls .timeline-slider {
+            width: 100%;
+            margin: 0;
+        }
+
+        .animation-controls .time-display {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        /* Environmental history graph */
+        .environment-history {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 15px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .environment-history h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .graph-container {
+            position: relative;
+            height: 100px;
+            border-bottom: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            margin-top: 20px;
+        }
+
+        .graph-y-axis {
+            position: absolute;
+            left: -25px;
+            top: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 10px;
+        }
+
+        .graph-line {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: rgba(0,0,0,0.1);
+        }
+
+        .data-line {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .data-point {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            margin-left: -2.5px;
+            margin-top: -2.5px;
+        }
+
+        .data-point.temperature {
+            background-color: var(--ku-orange);
+        }
+
+        .data-point.salinity {
+            background-color: var(--ku-blue);
+        }
+
+        .data-point.seasonal {
+            background-color: var(--ku-green);
+        }
+
+        .data-point.microplastic {
+            background-color: var(--ku-purple);
+        }
+
+        .data-point.acidification {
+            background-color: var(--ku-tan);
+        }
+
+        .climate-trend {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-top: 2px dashed rgba(255, 0, 0, 0.4);
+            opacity: 0;
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .graph-legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+
+        .legend-item:nth-child(1) .legend-color {
+            background-color: var(--ku-orange);
+        }
+
+        .legend-item:nth-child(2) .legend-color {
+            background-color: var(--ku-blue);
+        }
+
+        .legend-item:nth-child(3) .legend-color {
+            background-color: var(--ku-green);
+        }
+
+        .legend-item:nth-child(4) .legend-color {
+            background-color: var(--ku-purple);
+        }
+
+        .legend-item:nth-child(5) .legend-color {
+            background-color: var(--ku-tan);
+        }
+
+        /* Growth information display */
+        .growth-info {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 15px;
+            background-color: var(--ku-light-blue);
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .growth-info h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: var(--ku-navy);
+        }
+
+        .growth-info p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .growth-event {
+            padding: 8px;
+            margin-top: 8px;
+            background-color: rgba(255,255,255,0.7);
+            border-radius: 4px;
+            border-left: 4px solid var(--ku-green);
+        }
+
+        .growth-event.temperature {
+            border-left-color: var(--ku-orange);
+        }
+
+        .growth-event.salinity {
+            border-left-color: var(--ku-blue);
+        }
+
+        .growth-event.seasonal {
+            border-left-color: var(--ku-green);
+        }
+
+        .growth-event.microplastic {
+            border-left-color: var(--ku-purple);
+        }
+
+        .growth-event.acidification {
+            border-left-color: var(--ku-tan);
+        }
+
+        .growth-event .timestamp {
+            font-weight: bold;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Age bands visualization */
+        .age-bands {
+            width: 100%;
+            max-width: 600px;
+            height: 20px;
+            margin-top: 5px;
+            display: flex;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .age-band {
+            height: 100%;
+            flex-grow: 1;
+            transition: background-color 0.3s;
+        }
+
+        /* Pattern blend visualization */
+        .pattern-blend {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 15px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .pattern-blend h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .blend-bars {
+            display: flex;
+            width: 100%;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .blend-bar {
+            height: 100%;
+            transition: width 0.5s;
+        }
+
+        .blend-bar.cellular {
+            background-color: var(--ku-orange);
+        }
+
+        .blend-bar.wave {
+            background-color: var(--ku-blue);
+        }
+
+        .blend-bar.growth {
+            background-color: var(--ku-green);
+        }
+
+        .blend-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+        .blend-label {
+            text-align: center;
+            flex: 1;
+        }
+
+        /* Climate badge */
+        .climate-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            margin-left: 5px;
+        }
+
+        .climate-badge.pre-industrial {
+            background-color: var(--ku-green);
+        }
+
+        .climate-badge.current {
+            background-color: var(--ku-blue);
+        }
+
+        .climate-badge.near-future {
+            background-color: var(--ku-orange);
+        }
+
+        .climate-badge.worst-case {
+            background-color: #d9534f;
+        }
+
+        /* Pattern blend badges */
+        .pattern-badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            color: white;
+            margin-right: 4px;
+        }
+
+        .pattern-badge.cellular {
+            background-color: var(--ku-orange);
+        }
+
+        .pattern-badge.wave {
+            background-color: var(--ku-blue);
+        }
+
+        .pattern-badge.growth {
+            background-color: var(--ku-green);
+        }
+
+        /* Acidification indicator */
+        .acid-indicator {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .acid-indicator-bar {
+            flex-grow: 1;
+            height: 6px;
+            background: linear-gradient(to right, var(--ku-green), var(--ku-orange), #d9534f);
+            border-radius: 3px;
+            margin: 0 10px;
+        }
+
+        .acid-indicator-marker {
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 50%;
+            position: relative;
+            left: 0%;
+            transform: translateX(-50%);
+            transition: left 0.5s;
+        }
+
+        /* Additional UI elements */
+        .sr-status {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .hidden-canvas {
+            display: none;
+        }
+
+        /* Tabs CSS from Part 4 */
+        .tabs {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 15px;
+        }
+
+        .tab-buttons {
+            display: flex;
+            overflow-x: auto;
+        }
+
+        .tab-button {
+            padding: 8px 15px;
+            background-color: #e0e0e0;
+            border: none;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+            color: #333;
+            font-weight: 500;
+            margin-right: 2px;
+            width: auto;
+        }
+
+        .tab-button.active {
+            background-color: var(--ku-navy);
+            color: white;
+        }
+
+        .tab-content {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 0 5px 5px 5px;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        .tab-panel h3 {
+            margin-top: 0;
+            color: var(--ku-navy);
+        }
+
+        .tab-panel ul {
+            padding-left: 20px;
+        }
+
+        .tab-panel li {
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 <body>
@@ -766,108 +762,7 @@
                         </label>
                         <input type="range" id="complexity" min="10" max="100" value="50">
                     </div>
-                    <div class="environment-history">
-    <h3>Environmental History</h3>
-    
-    <div class="graph-container" id="environmentGraph">
-        <div class="graph-y-axis">
-            <span>High</span>
-            <span>Med</span>
-            <span>Low</span>
-        </div>
-        
-        <div class="graph-line" style="top: 0%;"></div>
-        <div class="graph-line" style="top: 50%;"></div>
-        <div class="graph-line" style="top: 100%;"></div>
-        
-        <div class="climate-trend" id="climateTrend"></div>
-        <div class="data-line" id="temperatureLine"></div>
-        <div class="data-line" id="salinityLine"></div>
-        <div class="data-line" id="seasonalLine"></div>
-        <div class="data-line" id="microplasticLine"></div>
-        <div class="data-line" id="acidificationLine"></div>
-    </div>
-    
-    <div class="graph-legend">
-        <div class="legend-item">
-            <div class="legend-color"></div>
-            <span>Temperature</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color"></div>
-            <span>Salinity</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color"></div>
-            <span>Seasonal</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color"></div>
-            <span>Microplastics</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color"></div>
-            <span>Acidification</span>
-        </div>
-    </div>
-</div>
-
-<div class="growth-info" id="growthInfo">
-    <h3>Growth Information</h3>
-    <p>Ready to start growth simulation. Press the play button to begin.</p>
-    <!-- Growth events will be added here dynamically -->
-</div>
-
-<div class="tabs">
-    <div class="tab-buttons">
-        <button class="tab-button active" data-tab="about">About Asari Clams</button>
-        <button class="tab-button" data-tab="climate">Climate Effects</button>
-        <button class="tab-button" data-tab="patterns">Shell Patterns</button>
-        <button class="tab-button" data-tab="microplastics">Microplastics</button>
-    </div>
-    
-    <div class="tab-content">
-        <div class="tab-panel about active" id="aboutTab">
-            <h3>About Asari Clam Patterns</h3>
-            <p>The Ruditapes philippinarum (Manila clam or Asari) creates its shell pattern by depositing calcium carbonate and proteins in layers as it grows. Each new row in the pattern builds upon the previous one, with environmental factors like water temperature, salinity, and food availability influencing the appearance.</p>
-            <p>This simulator mimics that process, building the pattern line by line over time. You can watch the pattern develop, see how environmental changes affect growth, and observe how the shell responds to conditions just like a real clam would in nature.</p>
-        </div>
-        
-        <div class="tab-panel climate" id="climateTab">
-            <h3>Climate Change Effects</h3>
-            <p>Research shows Manila clams are significantly affected by climate change:</p>
-            <ul>
-                <li><strong>Ocean Acidification:</strong> Lower pH reduces calcium carbonate availability, thinning shells and creating irregular patterns.</li>
-                <li><strong>Rising Water Temperatures:</strong> Accelerates metabolism but creates thermal stress, disrupting normal growth patterns.</li>
-                <li><strong>Increased Disease Susceptibility:</strong> Warmer waters lead to higher parasite loads, causing growth interruptions.</li>
-                <li><strong>More Extreme Weather Events:</strong> Sudden salinity changes from increased rainfall/flooding or drought conditions.</li>
-            </ul>
-            <p>The simulation includes four climate scenarios to demonstrate these effects on shell growth and pattern formation over time.</p>
-        </div>
-        
-        <div class="tab-panel patterns" id="patternsTab">
-            <h3>Shell Pattern Formation</h3>
-            <p>Clams don't use a single pattern formation mechanism throughout their lives. As they age and encounter different conditions, their shell formation processes adapt:</p>
-            <ul>
-                <li>Young clams often show simpler patterns focused on rapid growth</li>
-                <li>Mature clams develop more complex patterns with finer details</li>
-                <li>The mantle cells responsible for shell secretion can change their behavior based on environmental stress</li>
-            </ul>
-            <p>This simulator blends between three different pattern algorithms as the clam ages, creating more realistic and varied shell patterns.</p>
-        </div>
-        
-        <div class="tab-panel microplastics" id="microplasticsTab">
-            <h3>Microplastic Contamination</h3>
-            <p>Studies have found that Manila clams and other bivalves can incorporate microplastic particles into their shells during growth. This occurs because:</p>
-            <ul>
-                <li>Clams filter large volumes of water to feed, inadvertently collecting microplastics</li>
-                <li>Some particles become trapped in the mantle where shell formation occurs</li>
-                <li>These particles are embedded in the calcium carbonate shell matrix</li>
-            </ul>
-            <p>In this simulator, microplastic contamination is visualized as small colored inclusions in the shell pattern, with concentration determined by the climate scenario and microplastic slider setting.</p>
-        </div>
-    </div>
-</div>
+                    
                     <div class="control-group">
                         <h3>Climate Scenario</h3>
                         
@@ -994,6 +889,110 @@
                             <div class="blend-label" id="growthBlendLabel">Growth: 0%</div>
                         </div>
                     </div>
+
+                    <!-- Environment panels from Part 3 -->
+                    <div class="environment-history">
+                        <h3>Environmental History</h3>
+                        
+                        <div class="graph-container" id="environmentGraph">
+                            <div class="graph-y-axis">
+                                <span>High</span>
+                                <span>Med</span>
+                                <span>Low</span>
+                            </div>
+                            
+                            <div class="graph-line" style="top: 0%;"></div>
+                            <div class="graph-line" style="top: 50%;"></div>
+                            <div class="graph-line" style="top: 100%;"></div>
+                            
+                            <div class="climate-trend" id="climateTrend"></div>
+                            <div class="data-line" id="temperatureLine"></div>
+                            <div class="data-line" id="salinityLine"></div>
+                            <div class="data-line" id="seasonalLine"></div>
+                            <div class="data-line" id="microplasticLine"></div>
+                            <div class="data-line" id="acidificationLine"></div>
+                        </div>
+                        
+                        <div class="graph-legend">
+                            <div class="legend-item">
+                                <div class="legend-color"></div>
+                                <span>Temperature</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color"></div>
+                                <span>Salinity</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color"></div>
+                                <span>Seasonal</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color"></div>
+                                <span>Microplastics</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color"></div>
+                                <span>Acidification</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="growth-info" id="growthInfo">
+                        <h3>Growth Information</h3>
+                        <p>Ready to start growth simulation. Press the play button to begin.</p>
+                        <!-- Growth events will be added here dynamically -->
+                    </div>
+
+                    <div class="tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-button active" data-tab="about">About Asari Clams</button>
+                            <button class="tab-button" data-tab="climate">Climate Effects</button>
+                            <button class="tab-button" data-tab="patterns">Shell Patterns</button>
+                            <button class="tab-button" data-tab="microplastics">Microplastics</button>
+                        </div>
+                        
+                        <div class="tab-content">
+                            <div class="tab-panel about active" id="aboutTab">
+                                <h3>About Asari Clam Patterns</h3>
+                                <p>The Ruditapes philippinarum (Manila clam or Asari) creates its shell pattern by depositing calcium carbonate and proteins in layers as it grows. Each new row in the pattern builds upon the previous one, with environmental factors like water temperature, salinity, and food availability influencing the appearance.</p>
+                                <p>This simulator mimics that process, building the pattern line by line over time. You can watch the pattern develop, see how environmental changes affect growth, and observe how the shell responds to conditions just like a real clam would in nature.</p>
+                            </div>
+                            
+                            <div class="tab-panel climate" id="climateTab">
+                                <h3>Climate Change Effects</h3>
+                                <p>Research shows Manila clams are significantly affected by climate change:</p>
+                                <ul>
+                                    <li><strong>Ocean Acidification:</strong> Lower pH reduces calcium carbonate availability, thinning shells and creating irregular patterns.</li>
+                                    <li><strong>Rising Water Temperatures:</strong> Accelerates metabolism but creates thermal stress, disrupting normal growth patterns.</li>
+                                    <li><strong>Increased Disease Susceptibility:</strong> Warmer waters lead to higher parasite loads, causing growth interruptions.</li>
+                                    <li><strong>More Extreme Weather Events:</strong> Sudden salinity changes from increased rainfall/flooding or drought conditions.</li>
+                                </ul>
+                                <p>The simulation includes four climate scenarios to demonstrate these effects on shell growth and pattern formation over time.</p>
+                            </div>
+                            
+                            <div class="tab-panel patterns" id="patternsTab">
+                                <h3>Shell Pattern Formation</h3>
+                                <p>Clams don't use a single pattern formation mechanism throughout their lives. As they age and encounter different conditions, their shell formation processes adapt:</p>
+                                <ul>
+                                    <li>Young clams often show simpler patterns focused on rapid growth</li>
+                                    <li>Mature clams develop more complex patterns with finer details</li>
+                                    <li>The mantle cells responsible for shell secretion can change their behavior based on environmental stress</li>
+                                </ul>
+                                <p>This simulator blends between three different pattern algorithms as the clam ages, creating more realistic and varied shell patterns.</p>
+                            </div>
+                            
+                            <div class="tab-panel microplastics" id="microplasticsTab">
+                                <h3>Microplastic Contamination</h3>
+                                <p>Studies have found that Manila clams and other bivalves can incorporate microplastic particles into their shells during growth. This occurs because:</p>
+                                <ul>
+                                    <li>Clams filter large volumes of water to feed, inadvertently collecting microplastics</li>
+                                    <li>Some particles become trapped in the mantle where shell formation occurs</li>
+                                    <li>These particles are embedded in the calcium carbonate shell matrix</li>
+                                </ul>
+                                <p>In this simulator, microplastic contamination is visualized as small colored inclusions in the shell pattern, with concentration determined by the climate scenario and microplastic slider setting.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
@@ -1001,1411 +1000,1807 @@
     
     <canvas id="fullResCanvas" width="4096" height="4096" class="hidden-canvas"></canvas>
     <div id="statusUpdate" class="sr-status"></div>
-  <script>
-    // Main JavaScript code - Part 1
-// Add this inside a script tag at the end of the body
 
-// DOM elements
-const previewCanvas = document.getElementById('previewCanvas');
-const previewCtx = previewCanvas.getContext('2d');
-const fullResCanvas = document.getElementById('fullResCanvas');
-const fullResCtx = fullResCanvas.getContext('2d');
-const generateButton = document.getElementById('generateButton');
-const downloadButton = document.getElementById('downloadButton');
-const resetButton = document.getElementById('resetButton');
-const statusUpdate = document.getElementById('statusUpdate');
+    <script>
+        // JavaScript from Part 5 - Initialization
+        // DOM elements
+        const previewCanvas = document.getElementById('previewCanvas');
+        const previewCtx = previewCanvas.getContext('2d');
+        const fullResCanvas = document.getElementById('fullResCanvas');
+        const fullResCtx = fullResCanvas.getContext('2d');
+        const generateButton = document.getElementById('generateButton');
+        const downloadButton = document.getElementById('downloadButton');
+        const resetButton = document.getElementById('resetButton');
+        const statusUpdate = document.getElementById('statusUpdate');
 
-// Animation controls
-const playPauseButton = document.getElementById('playPauseButton');
-const timelineSlider = document.getElementById('timelineSlider');
-const currentTimeDisplay = document.getElementById('currentTimeDisplay');
-const totalTimeDisplay = document.getElementById('totalTimeDisplay');
-const speedButtons = document.querySelectorAll('.speed-btn');
-const ageBands = document.getElementById('ageBands');
+        // Animation controls
+        const playPauseButton = document.getElementById('playPauseButton');
+        const timelineSlider = document.getElementById('timelineSlider');
+        const currentTimeDisplay = document.getElementById('currentTimeDisplay');
+        const totalTimeDisplay = document.getElementById('totalTimeDisplay');
+        const speedButtons = document.querySelectorAll('.speed-btn');
+        const ageBands = document.getElementById('ageBands');
 
-// Pattern blend visualization
-const blendBars = document.getElementById('blendBars');
-const cellularBlendLabel = document.getElementById('cellularBlendLabel');
-const waveBlendLabel = document.getElementById('waveBlendLabel');
-const growthBlendLabel = document.getElementById('growthBlendLabel');
+        // Pattern blend visualization
+        const blendBars = document.getElementById('blendBars');
+        const cellularBlendLabel = document.getElementById('cellularBlendLabel');
+        const waveBlendLabel = document.getElementById('waveBlendLabel');
+        const growthBlendLabel = document.getElementById('growthBlendLabel');
 
-// Environment history
-const environmentGraph = document.getElementById('environmentGraph');
-const temperatureLine = document.getElementById('temperatureLine');
-const salinityLine = document.getElementById('salinityLine');
-const seasonalLine = document.getElementById('seasonalLine');
-const microplasticLine = document.getElementById('microplasticLine');
-const acidificationLine = document.getElementById('acidificationLine');
-const climateTrend = document.getElementById('climateTrend');
+        // Environment history
+        const environmentGraph = document.getElementById('environmentGraph');
+        const temperatureLine = document.getElementById('temperatureLine');
+        const salinityLine = document.getElementById('salinityLine');
+        const seasonalLine = document.getElementById('seasonalLine');
+        const microplasticLine = document.getElementById('microplasticLine');
+        const acidificationLine = document.getElementById('acidificationLine');
+        const climateTrend = document.getElementById('climateTrend');
 
-// Climate scenario
-const climateScenarioSelect = document.getElementById('climateScenario');
+        // Climate scenario
+        const climateScenarioSelect = document.getElementById('climateScenario');
 
-// Growth info
-const growthInfo = document.getElementById('growthInfo');
+        // Growth info
+        const growthInfo = document.getElementById('growthInfo');
 
-// Tab system
-const tabButtons = document.querySelectorAll('.tab-button');
-const tabPanels = document.querySelectorAll('.tab-panel');
+        // Tab system
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanels = document.querySelectorAll('.tab-panel');
 
-// Input elements and value displays
-const patternTypeSelect = document.getElementById('patternType');
-const patternBlendingInput = document.getElementById('patternBlending');
-const patternBlendingValue = document.getElementById('patternBlendingValue');
-const complexityInput = document.getElementById('complexity');
-const complexityValue = document.getElementById('complexityValue');
-const temperatureInput = document.getElementById('temperature');
-const temperatureValue = document.getElementById('temperatureValue');
-const salinityInput = document.getElementById('salinity');
-const salinityValue = document.getElementById('salinityValue');
-const acidificationInput = document.getElementById('acidification');
-const acidificationValue = document.getElementById('acidificationValue');
-const microplasticsInput = document.getElementById('microplastics');
-const microplasticsValue = document.getElementById('microplasticsValue');
-const seasonalVariationInput = document.getElementById('seasonalVariation');
-const seasonalVariationValue = document.getElementById('seasonalVariationValue');
-const environmentalEventsInput = document.getElementById('environmentalEvents');
-const environmentalEventsValue = document.getElementById('environmentalEventsValue');
-const growthYearsInput = document.getElementById('growthYears');
-const growthYearsValue = document.getElementById('growthYearsValue');
-const baseColorInput = document.getElementById('baseColor');
-const accentColorInput = document.getElementById('accentColor');
-const microplasticColorInput = document.getElementById('microplasticColor');
-const colorVariationInput = document.getElementById('colorVariation');
-const colorVariationValue = document.getElementById('colorVariationValue');
+        // Input elements and value displays
+        const patternTypeSelect = document.getElementById('patternType');
+        const patternBlendingInput = document.getElementById('patternBlending');
+        const patternBlendingValue = document.getElementById('patternBlendingValue');
+        const complexityInput = document.getElementById('complexity');
+        const complexityValue = document.getElementById('complexityValue');
+        const temperatureInput = document.getElementById('temperature');
+        const temperatureValue = document.getElementById('temperatureValue');
+        const salinityInput = document.getElementById('salinity');
+        const salinityValue = document.getElementById('salinityValue');
+        const acidificationInput = document.getElementById('acidification');
+        const acidificationValue = document.getElementById('acidificationValue');
+        const microplasticsInput = document.getElementById('microplastics');
+        const microplasticsValue = document.getElementById('microplasticsValue');
+        const seasonalVariationInput = document.getElementById('seasonalVariation');
+        const seasonalVariationValue = document.getElementById('seasonalVariationValue');
+        const environmentalEventsInput = document.getElementById('environmentalEvents');
+        const environmentalEventsValue = document.getElementById('environmentalEventsValue');
+        const growthYearsInput = document.getElementById('growthYears');
+        const growthYearsValue = document.getElementById('growthYearsValue');
+        const baseColorInput = document.getElementById('baseColor');
+        const accentColorInput = document.getElementById('accentColor');
+        const microplasticColorInput = document.getElementById('microplasticColor');
+        const colorVariationInput = document.getElementById('colorVariation');
+        const colorVariationValue = document.getElementById('colorVariationValue');
 
-// Animation state
-let animationState = {
-    isPlaying: false,
-    speed: 1,
-    currentRow: 0,
-    totalRows: 0,
-    startTime: 0,
-    currentTime: 0,
-    animationFrameId: null,
-    growthYears: 3,
-    monthsPerRow: 0,
-    environmentalHistory: [],
-    growthEvents: [],
-    acidificationEvents: [],
-    microplasticEvents: [],
-    rowsCompleted: 0,
-    patternBlend: { cellular: 1, wave: 0, growth: 0 }, // Initialize pattern blend
-    climateScenario: 'current'
-};
+        // Animation state
+        let animationState = {
+            isPlaying: false,
+            speed: 1,
+            currentRow: 0,
+            totalRows: 0,
+            startTime: 0,
+            currentTime: 0,
+            animationFrameId: null,
+            growthYears: 3,
+            monthsPerRow: 0,
+            environmentalHistory: [],
+            growthEvents: [],
+            acidificationEvents: [],
+            microplasticEvents: [],
+            rowsCompleted: 0,
+            patternBlend: { cellular: 1, wave: 0, growth: 0 }, // Initialize pattern blend
+            climateScenario: 'current'
+        };
 
-// Event listeners for range inputs to update displayed values
-patternBlendingInput.addEventListener('input', () => {
-    patternBlendingValue.textContent = patternBlendingInput.value;
-});
+        // Event listeners for range inputs to update displayed values
+        patternBlendingInput.addEventListener('input', () => {
+            patternBlendingValue.textContent = patternBlendingInput.value;
+        });
 
-complexityInput.addEventListener('input', () => {
-    complexityValue.textContent = complexityInput.value;
-});
+        complexityInput.addEventListener('input', () => {
+            complexityValue.textContent = complexityInput.value;
+        });
 
-temperatureInput.addEventListener('input', () => {
-    temperatureValue.textContent = temperatureInput.value;
-});
+        temperatureInput.addEventListener('input', () => {
+            temperatureValue.textContent = temperatureInput.value;
+        });
 
-salinityInput.addEventListener('input', () => {
-    salinityValue.textContent = salinityInput.value;
-});
+        salinityInput.addEventListener('input', () => {
+            salinityValue.textContent = salinityInput.value;
+        });
 
-acidificationInput.addEventListener('input', () => {
-    acidificationValue.textContent = acidificationInput.value;
-});
+        acidificationInput.addEventListener('input', () => {
+            acidificationValue.textContent = acidificationInput.value;
+        });
 
-microplasticsInput.addEventListener('input', () => {
-    microplasticsValue.textContent = microplasticsInput.value;
-});
+        microplasticsInput.addEventListener('input', () => {
+            microplasticsValue.textContent = microplasticsInput.value;
+        });
 
-seasonalVariationInput.addEventListener('input', () => {
-    seasonalVariationValue.textContent = seasonalVariationInput.value;
-});
+        seasonalVariationInput.addEventListener('input', () => {
+            seasonalVariationValue.textContent = seasonalVariationInput.value;
+        });
 
-environmentalEventsInput.addEventListener('input', () => {
-    environmentalEventsValue.textContent = environmentalEventsInput.value;
-});
+        environmentalEventsInput.addEventListener('input', () => {
+            environmentalEventsValue.textContent = environmentalEventsInput.value;
+        });
 
-growthYearsInput.addEventListener('input', () => {
-    growthYearsValue.textContent = growthYearsInput.value;
-    totalTimeDisplay.textContent = `${growthYearsInput.value}y 0m`;
-});
+        growthYearsInput.addEventListener('input', () => {
+            growthYearsValue.textContent = growthYearsInput.value;
+            totalTimeDisplay.textContent = `${growthYearsInput.value}y 0m`;
+        });
 
-colorVariationInput.addEventListener('input', () => {
-    colorVariationValue.textContent = colorVariationInput.value;
-});
+        colorVariationInput.addEventListener('input', () => {
+            colorVariationValue.textContent = colorVariationInput.value;
+        });
 
-// Climate scenario change event
-climateScenarioSelect.addEventListener('change', () => {
-    // Update environmental parameters based on climate scenario
-    updateClimateScenarioParameters();
-});
+        // Climate scenario change event
+        climateScenarioSelect.addEventListener('change', () => {
+            // Update environmental parameters based on climate scenario
+            updateClimateScenarioParameters();
+        });
 
-// Button event listeners
-generateButton.addEventListener('click', startNewSimulation);
-downloadButton.addEventListener('click', downloadFullResolution);
-resetButton.addEventListener('click', resetParameters);
+        // Button event listeners
+        generateButton.addEventListener('click', startNewSimulation);
+        downloadButton.addEventListener('click', downloadFullResolution);
+        resetButton.addEventListener('click', resetParameters);
 
-// Animation control event listeners
-playPauseButton.addEventListener('click', togglePlayPause);
-timelineSlider.addEventListener('input', scrubTimeline);
+        // Animation control event listeners
+        playPauseButton.addEventListener('click', togglePlayPause);
+        timelineSlider.addEventListener('input', scrubTimeline);
 
-// Tab system event listeners
-tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remove active class from all buttons and panels
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabPanels.forEach(panel => panel.classList.remove('active'));
-        
-        // Add active class to clicked button
-        button.classList.add('active');
-        
-        // Show corresponding panel
-        const tabId = button.getAttribute('data-tab');
-        document.getElementById(`${tabId}Tab`).classList.add('active');
-    });
-});
+        // Tab system event listeners
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and panels
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanels.forEach(panel => panel.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding panel
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(`${tabId}Tab`).classList.add('active');
+            });
+        });
 
-// Speed button event listeners
-speedButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remove active class from all buttons
-        speedButtons.forEach(b => b.classList.remove('active'));
-        
-        // Add active class to clicked button
-        button.classList.add('active');
-        
-        // Set animation speed
-        animationState.speed = parseFloat(button.dataset.speed);
-    });
-});
+        // Speed button event listeners
+        speedButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                speedButtons.forEach(b => b.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Set animation speed
+                animationState.speed = parseFloat(button.dataset.speed);
+            });
+        });
 
-// Generate pattern when page loads
-window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(initializeSimulation, 100);
-});
+        // Generate pattern when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(initializeSimulation, 100);
+        });
 
-// Update climate scenario parameters
-function updateClimateScenarioParameters() {
-    const scenario = climateScenarioSelect.value;
-    animationState.climateScenario = scenario;
-    
-    // Adjust parameters based on climate scenario
-    switch (scenario) {
-        case 'pre-industrial':
-            // Pre-industrial: minimal pollution, stable climate
-            microplasticsInput.value = 0;
-            microplasticsValue.textContent = 0;
-            acidificationInput.value = 0;
-            acidificationValue.textContent = 0;
-            seasonalVariationInput.value = 30;
-            seasonalVariationValue.textContent = 30;
-            break;
+        // Update climate scenario parameters
+        function updateClimateScenarioParameters() {
+            const scenario = climateScenarioSelect.value;
+            animationState.climateScenario = scenario;
             
-        case 'current':
-            // Current: moderate pollution, some variability
-            microplasticsInput.value = 20;
-            microplasticsValue.textContent = 20;
+            // Adjust parameters based on climate scenario
+            switch (scenario) {
+                case 'pre-industrial':
+                    // Pre-industrial: minimal pollution, stable climate
+                    microplasticsInput.value = 0;
+                    microplasticsValue.textContent = 0;
+                    acidificationInput.value = 0;
+                    acidificationValue.textContent = 0;
+                    seasonalVariationInput.value = 30;
+                    seasonalVariationValue.textContent = 30;
+                    break;
+                    
+                case 'current':
+                    // Current: moderate pollution, some variability
+                    microplasticsInput.value = 20;
+                    microplasticsValue.textContent = 20;
+                    acidificationInput.value = 20;
+                    acidificationValue.textContent = 20;
+                    seasonalVariationInput.value = 50;
+                    seasonalVariationValue.textContent = 50;
+                    break;
+                    
+                case 'near-future':
+                    // Near-future: higher pollution, more variability
+                    microplasticsInput.value = 50;
+                    microplasticsValue.textContent = 50;
+                    acidificationInput.value = 50;
+                    acidificationValue.textContent = 50;
+                    seasonalVariationInput.value = 70;
+                    seasonalVariationValue.textContent = 70;
+                    break;
+                    
+                case 'worst-case':
+                    // Worst-case: severe pollution, extreme variability
+                    microplasticsInput.value = 80;
+                    microplasticsValue.textContent = 80;
+                    acidificationInput.value = 80;
+                    acidificationValue.textContent = 80;
+                    seasonalVariationInput.value = 90;
+                    seasonalVariationValue.textContent = 90;
+                    break;
+            }
+            
+            // Update status
+            statusUpdate.textContent = `Climate scenario updated to ${formatClimateScenario(scenario)}`;
+        }
+
+        // Reset parameters to default values
+        function resetParameters() {
+            patternTypeSelect.value = 'cellular';
+            patternBlendingInput.value = 50;
+            patternBlendingValue.textContent = 50;
+            complexityInput.value = 50;
+            complexityValue.textContent = 50;
+            climateScenarioSelect.value = 'current';
+            temperatureInput.value = 20;
+            temperatureValue.textContent = 20;
+            salinityInput.value = 30;
+            salinityValue.textContent = 30;
             acidificationInput.value = 20;
             acidificationValue.textContent = 20;
+            microplasticsInput.value = 20;
+            microplasticsValue.textContent = 20;
             seasonalVariationInput.value = 50;
             seasonalVariationValue.textContent = 50;
-            break;
+            environmentalEventsInput.value = 3;
+            environmentalEventsValue.textContent = 3;
+            growthYearsInput.value = 3;
+            growthYearsValue.textContent = 3;
+            baseColorInput.value = '#f5e7c9';
+            accentColorInput.value = '#6a4c3b';
+            microplasticColorInput.value = '#9370DB';
+            colorVariationInput.value = 30;
+            colorVariationValue.textContent = 30;
             
-        case 'near-future':
-            // Near-future: higher pollution, more variability
-            microplasticsInput.value = 50;
-            microplasticsValue.textContent = 50;
-            acidificationInput.value = 50;
-            acidificationValue.textContent = 50;
-            seasonalVariationInput.value = 70;
-            seasonalVariationValue.textContent = 70;
-            break;
-            
-        case 'worst-case':
-            // Worst-case: severe pollution, extreme variability
-            microplasticsInput.value = 80;
-            microplasticsValue.textContent = 80;
-            acidificationInput.value = 80;
-            acidificationValue.textContent = 80;
-            seasonalVariationInput.value = 90;
-            seasonalVariationValue.textContent = 90;
-            break;
-    }
-    
-    // Update status
-    statusUpdate.textContent = `Climate scenario updated to ${formatClimateScenario(scenario)}`;
-}
-
-// Reset parameters to default values
-function resetParameters() {
-    patternTypeSelect.value = 'cellular';
-    patternBlendingInput.value = 50;
-    patternBlendingValue.textContent = 50;
-    complexityInput.value = 50;
-    complexityValue.textContent = 50;
-    climateScenarioSelect.value = 'current';
-    temperatureInput.value = 20;
-    temperatureValue.textContent = 20;
-    salinityInput.value = 30;
-    salinityValue.textContent = 30;
-    acidificationInput.value = 20;
-    acidificationValue.textContent = 20;
-    microplasticsInput.value = 20;
-    microplasticsValue.textContent = 20;
-    seasonalVariationInput.value = 50;
-    seasonalVariationValue.textContent = 50;
-    environmentalEventsInput.value = 3;
-    environmentalEventsValue.textContent = 3;
-    growthYearsInput.value = 3;
-    growthYearsValue.textContent = 3;
-    baseColorInput.value = '#f5e7c9';
-    accentColorInput.value = '#6a4c3b';
-    microplasticColorInput.value = '#9370DB';
-    colorVariationInput.value = 30;
-    colorVariationValue.textContent = 30;
-    
-    statusUpdate.textContent = "Parameters reset to default values";
-    startNewSimulation();
-}
-
-// Format climate scenario for display
-function formatClimateScenario(scenario) {
-    switch (scenario) {
-        case 'pre-industrial':
-            return 'Pre-Industrial';
-        case 'current':
-            return 'Current';
-        case 'near-future':
-            return 'Near-Future (2050)';
-        case 'worst-case':
-            return 'Worst-Case (2100)';
-        default:
-            return scenario;
-    }
-}
-    // Pattern Generation and Environmental Events Functions
-// Add this after the previous JavaScript code
-
-// Initialize pattern generation
-let cellStates, temperatureNoise, salinityNoise, waveSources, baseColor, accentColor, microplasticColor;
-let environmentParams = {};
-
-function initializePatternGeneration() {
-    const width = previewCanvas.width;
-    const complexity = parseInt(complexityInput.value);
-    const temperature = parseInt(temperatureInput.value);
-    const salinity = parseInt(salinityInput.value);
-    const acidification = parseInt(acidificationInput.value) / 100;
-    const microplastics = parseInt(microplasticsInput.value) / 100;
-    
-    // Store initial environmental parameters
-    environmentParams = {
-        temperature: temperature,
-        salinity: salinity,
-        acidification: acidification,
-        microplastics: microplastics,
-        seasonalVariation: parseInt(seasonalVariationInput.value) / 100
-    };
-    
-    // Parse colors
-    baseColor = hexToRgb(baseColorInput.value);
-    accentColor = hexToRgb(accentColorInput.value);
-    microplasticColor = hexToRgb(microplasticColorInput.value);
-    
-    // Initialize cellular automaton pattern
-    initializeCellularPattern(width, complexity, temperature, salinity);
-    
-    // Initialize wave interference pattern
-    initializeWavePattern(width, complexity, temperature, salinity);
-    
-    // Growth ring pattern doesn't need specific initialization
-}
-
-// Initialize cellular automaton pattern
-function initializeCellularPattern(width, complexity, temperature, salinity) {
-    // Rule number for cellular automaton
-    const rule = Math.floor(complexity / 10) + 30;
-    
-    // Initialize cell states
-    cellStates = new Array(width).fill(0);
-    
-    // Create noise values for environmental factors
-    temperatureNoise = simplex1D(width, temperature / 10);
-    salinityNoise = simplex1D(width, salinity / 5);
-    
-    // Cell density affected by salinity
-    const cellDensity = 0.3 + (salinity / 100);
-    
-    // Initialize with some random cells
-    for (let x = 0; x < width; x++) {
-        if (Math.random() < cellDensity) {
-            cellStates[x] = 1;
+            statusUpdate.textContent = "Parameters reset to default values";
+            startNewSimulation();
         }
-    }
-}
 
-// Initialize wave interference pattern
-function initializeWavePattern(width, complexity, temperature, salinity) {
-    // Wave parameters based on input settings
-    const waveCount = 3 + Math.floor(complexity / 20); // Number of wave sources
-    waveSources = [];
-    
-    // Create wave sources
-    for (let i = 0; i < waveCount; i++) {
-        waveSources.push({
-            x: Math.random() * width,
-            y: Math.random() * previewCanvas.height,
-            frequency: 0.01 + (Math.random() * 0.02),
-            amplitude: 0.5 + (Math.random() * 0.5),
-            phase: Math.random() * Math.PI * 2
-        });
-    }
-}
+        // Format climate scenario for display
+        function formatClimateScenario(scenario) {
+            switch (scenario) {
+                case 'pre-industrial':
+                    return 'Pre-Industrial';
+                case 'current':
+                    return 'Current';
+                case 'near-future':
+                    return 'Near-Future (2050)';
+                case 'worst-case':
+                    return 'Worst-Case (2100)';
+                default:
+                    return scenario;
+            }
+        }
 
-// Draw next row of the pattern
-function drawNextRow() {
-    if (animationState.currentRow >= animationState.totalRows) {
-        return;
-    }
-    
-    const width = previewCanvas.width;
-    const y = animationState.currentRow;
-    
-    // Get current environmental parameters (may be modified by events)
-    const rowParams = getCurrentEnvironmentalParams(y);
-    
-    // Create array for this row's pixel data
-    const rowData = new Uint8ClampedArray(width * 4);
-    
-    // Apply climate change effects to environmental parameters
-    applyClimateChangeEffects(y, rowParams);
-    
-    // Generate row with blended pattern algorithms
-    generateBlendedPatternRow(rowData, width, y, rowParams);
-    
-    // Draw the row on the canvas
-    const imageData = new ImageData(rowData, width, 1);
-    previewCtx.putImageData(imageData, 0, y);
-    
-    // Store environmental data for this row
-    animationState.environmentalHistory.push({
-        row: y,
-        temperature: rowParams.temperature,
-        salinity: rowParams.salinity,
-        acidification: rowParams.acidification,
-        microplastics: rowParams.microplastics,
-        seasonalVariation: rowParams.seasonalVariation
-    });
-    
-    // Increment current row
-    animationState.currentRow++;
-    animationState.rowsCompleted = animationState.currentRow;
-}
+        // JavaScript from Part 6 - Core Functions
+        // Initialize the simulation
+        function initializeSimulation() {
+            // Clear animation if already running
+            if (animationState.animationFrameId) {
+                cancelAnimationFrame(animationState.animationFrameId);
+            }
+            
+            // Set up initial state
+            animationState.isPlaying = false;
+            animationState.currentRow = 0;
+            animationState.totalRows = previewCanvas.height;
+            animationState.growthYears = parseInt(growthYearsInput.value);
+            animationState.monthsPerRow = (animationState.growthYears * 12) / animationState.totalRows;
+            animationState.environmentalHistory = [];
+            animationState.growthEvents = [];
+            animationState.acidificationEvents = [];
+            animationState.microplasticEvents = [];
+            animationState.rowsCompleted = 0;
+            animationState.climateScenario = climateScenarioSelect.value;
+            
+            // Initialize pattern blend based on selected pattern type
+            initializePatternBlend();
+            
+            // Update UI
+            updatePlayPauseButton();
+            timelineSlider.value = 0;
+            timelineSlider.max = animationState.totalRows;
+            currentTimeDisplay.textContent = formatTimeDisplay(0);
+            totalTimeDisplay.textContent = formatTimeDisplay(animationState.totalRows);
+            
+            // Clear canvas
+            previewCtx.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
+            
+            // Initialize pattern generation
+            initializePatternGeneration();
+            
+            // Generate environmental events
+            generateEnvironmentalEvents();
+            
+            // Generate acidification events
+            generateAcidificationEvents();
+            
+            // Generate microplastic events
+            generateMicroplasticEvents();
+            
+            // Create age bands
+            createAgeBands();
+            
+            // Update growth info
+            updateGrowthInfo(0);
+            
+            // Update pattern blend visualization
+            updatePatternBlendVisualization(0);
+            
+            // Draw first row
+            drawNextRow();
+            
+            // Update environment graph
+            updateEnvironmentGraph();
+        }
 
-// Apply climate change effects to environmental parameters
-function applyClimateChangeEffects(row, params) {
-    const climateScenario = animationState.climateScenario;
-    const totalRows = animationState.totalRows;
-    const progress = row / totalRows; // Normalized growth progress (0-1)
-    
-    // Base parameters unchanged for pre-industrial
-    if (climateScenario === 'pre-industrial') {
-        return;
-    }
-    
-    // Apply climate change effects based on scenario
-    switch (climateScenario) {
-        case 'current':
-            // Slight temperature increase over time
-            params.temperature += progress * 2;
-            
-            // Slight acidification increase
-            params.acidification += progress * 0.1;
-            break;
-        
-        case 'near-future':
-            // Moderate temperature increase (2-3°C)
-            params.temperature += progress * 5;
-            
-            // More acidification
-            params.acidification += progress * 0.3;
-            
-            // More variability in seasonal effects
-            params.seasonalVariation *= (1 + progress * 0.2);
-            break;
-        
-        case 'worst-case':
-            // Severe temperature increase (4-6°C)
-            params.temperature += progress * 10;
-            
-            // Severe acidification
-            params.acidification += progress * 0.5;
-            
-            // Extreme seasonal variability
-            params.seasonalVariation *= (1 + progress * 0.4);
-            break;
-    }
-    
-    // Ensure values are within valid ranges
-    params.temperature = Math.max(5, Math.min(40, params.temperature));
-    params.acidification = Math.max(0, Math.min(1, params.acidification));
-    params.seasonalVariation = Math.max(0, Math.min(1, params.seasonalVariation));
-}
+        // Start a new simulation
+        function startNewSimulation() {
+            initializeSimulation();
+            statusUpdate.textContent = "New growth simulation initialized. Press play to begin.";
+        }
 
-// Generate blended pattern row using current pattern blend weights
-function generateBlendedPatternRow(rowData, width, y, params) {
-    // Get current pattern blend weights
-    const { cellular, wave, growth } = animationState.patternBlend;
-    
-    // If one pattern has 100% weight, use that pattern directly
-    if (cellular === 1) {
-        generateCellularRow(rowData, width, y, params);
-        return;
-    }
-    if (wave === 1) {
-        generateWaveRow(rowData, width, y, params);
-        return;
-    }
-    if (growth === 1) {
-        generateGrowthRow(rowData, width, y, params);
-        return;
-    }
-    
-    // Create temporary arrays for each pattern type
-    const cellularData = new Uint8ClampedArray(width * 4);
-    const waveData = new Uint8ClampedArray(width * 4);
-    const growthData = new Uint8ClampedArray(width * 4);
-    
-    // Generate each pattern type
-    if (cellular > 0) {
-        generateCellularRow(cellularData, width, y, params);
-    }
-    if (wave > 0) {
-        generateWaveRow(waveData, width, y, params);
-    }
-    if (growth > 0) {
-        generateGrowthRow(growthData, width, y, params);
-    }
-    
-    // Blend patterns based on weights
-    for (let x = 0; x < width; x++) {
-        const pixelIndex = x * 4;
-        
-        // Weighted average of R, G, B values from each pattern
-        for (let c = 0; c < 3; c++) {
-            rowData[pixelIndex + c] = Math.round(
-                (cellularData[pixelIndex + c] * cellular) +
-                (waveData[pixelIndex + c] * wave) +
-                (growthData[pixelIndex + c] * growth)
+        // Toggle play/pause
+        function togglePlayPause() {
+            animationState.isPlaying = !animationState.isPlaying;
+            
+            if (animationState.isPlaying) {
+                // Start animation
+                animationState.startTime = performance.now() - (animationState.currentRow * 50 / animationState.speed);
+                animateGrowth();
+            } else {
+                // Pause animation
+                if (animationState.animationFrameId) {
+                    cancelAnimationFrame(animationState.animationFrameId);
+                    animationState.animationFrameId = null;
+                }
+            }
+            
+            updatePlayPauseButton();
+        }
+
+        // Update play/pause button
+        function updatePlayPauseButton() {
+            if (animationState.isPlaying) {
+                playPauseButton.innerHTML = `
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="6" y="4" width="4" height="16" fill="currentColor"></rect>
+                        <rect x="14" y="4" width="4" height="16" fill="currentColor"></rect>
+                    </svg>
+                `;
+            } else {
+                playPauseButton.innerHTML = `
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5 3 19 12 5 21 5 3" fill="currentColor"></polygon>
+                    </svg>
+                `;
+            }
+        }
+
+        // Scrub timeline
+        function scrubTimeline() {
+            const targetRow = parseInt(timelineSlider.value);
+            
+            // If we're going backward, we need to reset and redraw up to the target
+            if (targetRow < animationState.currentRow) {
+                initializePatternGeneration();
+                animationState.currentRow = 0;
+                previewCtx.clearRect(0, 0, previewCanvas.width, previewCanvas.height);
+                
+                // Draw rows up to target
+                for (let i = 0; i <= targetRow; i++) {
+                    updatePatternBlend(i);
+                    drawNextRow();
+                }
+            } else {
+                // Draw any new rows needed to reach target
+                while (animationState.currentRow < targetRow) {
+                    updatePatternBlend(animationState.currentRow);
+                    drawNextRow();
+                }
+            }
+            
+            // Update time display
+            currentTimeDisplay.textContent = formatTimeDisplay(animationState.currentRow);
+            
+            // Update growth info for this point in time
+            updateGrowthInfo(animationState.currentRow);
+            
+            // Update environment graph with current time marker
+            updateEnvironmentGraph(animationState.currentRow);
+            
+            // Update age bands
+            updateAgeBands(animationState.currentRow);
+            
+            // Update pattern blend visualization
+            updatePatternBlendVisualization(animationState.currentRow);
+        }
+
+        // Animate growth
+        function animateGrowth() {
+            if (!animationState.isPlaying) return;
+            
+            const now = performance.now();
+            const elapsed = now - animationState.startTime;
+            const targetRow = Math.min(
+                Math.floor(elapsed * animationState.speed / 50), 
+                animationState.totalRows
             );
-        }
-        
-        // Alpha is always 255 (opaque)
-        rowData[pixelIndex + 3] = 255;
-    }
-    
-    // Add microplastic particles
-    addMicroplasticParticles(rowData, width, y, params);
-    
-    // Apply acidification effects
-    applyAcidificationEffects(rowData, width, y, params);
-}
-
-// Add microplastic particles to the pattern
-function addMicroplasticParticles(rowData, width, y, params) {
-    const microplasticLevel = params.microplastics;
-    
-    // Skip if no microplastics
-    if (microplasticLevel <= 0) {
-        return;
-    }
-    
-    // Number of potential microplastic particles in this row
-    const particleCount = Math.floor(width * microplasticLevel * 0.1);
-    
-    // Add particles randomly
-    for (let i = 0; i < particleCount; i++) {
-        // Random position in the row
-        const x = Math.floor(Math.random() * width);
-        const pixelIndex = x * 4;
-        
-        // Only add particles with some probability
-        if (Math.random() < microplasticLevel) {
-            // Microplastic color with some variation
-            const r = microplasticColor.r + Math.floor((Math.random() - 0.5) * 20);
-            const g = microplasticColor.g + Math.floor((Math.random() - 0.5) * 20);
-            const b = microplasticColor.b + Math.floor((Math.random() - 0.5) * 20);
             
-            // Set pixel color
-            rowData[pixelIndex] = r;
-            rowData[pixelIndex + 1] = g;
-            rowData[pixelIndex + 2] = b;
-        }
-    }
-}
-
-// Apply acidification effects to the pattern
-function applyAcidificationEffects(rowData, width, y, params) {
-    const acidificationLevel = params.acidification;
-    
-    // Skip if no acidification
-    if (acidificationLevel <= 0) {
-        return;
-    }
-    
-    // Color fading effect - represents calcium carbonate dissolution
-    for (let x = 0; x < width; x++) {
-        // Apply effect with varying intensity across the row
-        const localEffect = acidificationLevel * (0.5 + Math.sin(x * 0.01) * 0.5);
-        
-        // Skip some pixels randomly to create uneven effect
-        if (Math.random() < localEffect * 0.7) {
-            const pixelIndex = x * 4;
-            
-            // Fade color toward lighter, more translucent shade
-            rowData[pixelIndex] = Math.min(255, rowData[pixelIndex] + Math.floor(localEffect * 40));
-            rowData[pixelIndex + 1] = Math.min(255, rowData[pixelIndex + 1] + Math.floor(localEffect * 40));
-            rowData[pixelIndex + 2] = Math.min(255, rowData[pixelIndex + 2] + Math.floor(localEffect * 40));
-        }
-    }
-    
-    // Pattern disruptions - create occasional gaps or distortions
-    if (Math.random() < acidificationLevel * 0.3) {
-        const disruptionStart = Math.floor(Math.random() * width * 0.7);
-        const disruptionWidth = Math.floor(5 + Math.random() * 20 * acidificationLevel);
-        
-        for (let x = disruptionStart; x < disruptionStart + disruptionWidth && x < width; x++) {
-            const pixelIndex = x * 4;
-            
-            // Create whitish disruption
-            rowData[pixelIndex] = Math.min(255, rowData[pixelIndex] + 80);
-            rowData[pixelIndex + 1] = Math.min(255, rowData[pixelIndex + 1] + 80);
-            rowData[pixelIndex + 2] = Math.min(255, rowData[pixelIndex + 2] + 80);
-        }
-    }
-}
-
-// Get current environmental parameters (affected by events)
-function getCurrentEnvironmentalParams(row) {
-    // Start with base parameters
-    const params = { ...environmentParams };
-    
-    // Apply seasonal variation
-    const seasonalFrequency = 0.05; // Cycles per year
-    const monthsElapsed = row * animationState.monthsPerRow;
-    const yearsElapsed = monthsElapsed / 12;
-    const seasonalPhase = Math.sin(yearsElapsed * 2 * Math.PI * seasonalFrequency);
-    const seasonalEffect = seasonalPhase * params.seasonalVariation;
-    
-    // Seasonal effect on temperature (warmer in summer, cooler in winter)
-    params.temperature += seasonalEffect * 10;
-    
-    // Apply environmental events
-    for (const event of animationState.growthEvents) {
-        if (row >= event.startRow && row <= event.endRow) {
-            // Apply event effect
-            const intensity = event.intensity * (1 - Math.abs((row - event.peakRow) / (event.endRow - event.startRow) * 2));
-            
-            if (event.type === 'temperature') {
-                params.temperature += intensity * 15; // Temperature event (°C)
-            } else if (event.type === 'salinity') {
-                params.salinity += intensity * 10; // Salinity event (ppt)
-            } else if (event.type === 'storm') {
-                // Storms affect both temperature and salinity
-                params.temperature -= intensity * 5;
-                params.salinity -= intensity * 5;
+            if (targetRow > animationState.currentRow) {
+                // Draw new rows
+                for (let i = animationState.currentRow; i < targetRow; i++) {
+                    updatePatternBlend(i);
+                    drawNextRow();
+                }
+                
+                // Update timeline slider
+                timelineSlider.value = animationState.currentRow;
+                
+                // Update time display
+                currentTimeDisplay.textContent = formatTimeDisplay(animationState.currentRow);
+                
+                // Update growth info
+                updateGrowthInfo(animationState.currentRow);
+                
+                // Update environment graph
+                updateEnvironmentGraph(animationState.currentRow);
+                
+                // Update age bands
+                updateAgeBands(animationState.currentRow);
+                
+                // Update pattern blend visualization
+                updatePatternBlendVisualization(animationState.currentRow);
             }
-        }
-    }
-    
-    // Apply acidification events
-    for (const event of animationState.acidificationEvents) {
-        if (row >= event.startRow && row <= event.endRow) {
-            // Apply acidification event effect
-            const intensity = event.intensity * (1 - Math.abs((row - event.peakRow) / (event.endRow - event.startRow) * 2));
-            params.acidification += intensity * 0.5; // Increase acidification during event
-        }
-    }
-    
-    // Apply microplastic events
-    for (const event of animationState.microplasticEvents) {
-        if (row >= event.startRow && row <= event.endRow) {
-            // Apply microplastic event effect
-            const intensity = event.intensity * (1 - Math.abs((row - event.peakRow) / (event.endRow - event.startRow) * 2));
-            params.microplastics += intensity * 0.5; // Increase microplastics during event
-        }
-    }
-    
-    // Ensure values are within valid ranges
-    params.temperature = Math.max(5, Math.min(40, params.temperature));
-    params.salinity = Math.max(10, Math.min(40, params.salinity));
-    params.acidification = Math.max(0, Math.min(1, params.acidification));
-    params.microplastics = Math.max(0, Math.min(1, params.microplastics));
-    
-    return params;
-}
-
-// Generate cellular automaton pattern row
-function generateCellularRow(rowData, width, y, params) {
-    const {
-        temperature,
-        salinity,
-        seasonalVariation
-    } = params;
-    
-    const colorVariation = parseInt(colorVariationInput.value) / 100;
-    const rule = Math.floor(parseInt(complexityInput.value) / 10) + 30;
-    
-    // Seasonal effect - varies with position
-    const seasonalFrequency = 0.1 + (seasonalVariation * 0.2);
-    const seasonalEffect = Math.sin(y * seasonalFrequency) * seasonalVariation;
-    
-    // Apply the cellular automaton rule to generate the next row
-    const newStates = new Array(width).fill(0);
-    
-    for (let x = 0; x < width; x++) {
-        // Get the current cell and its neighbors
-        const left = x > 0 ? cellStates[x - 1] : cellStates[width - 1];
-        const center = cellStates[x];
-        const right = x < width - 1 ? cellStates[x + 1] : cellStates[0];
-        
-        // Calculate the rule index
-        const index = (left << 2) | (center << 1) | right;
-        
-        // Apply the rule
-        const bit = (rule >> index) & 1;
-        
-        // Environmental factors influence the cell state
-        const tempEffect = temperatureNoise[x] * (temperature / 35); // Temperature effect
-        const salEffect = salinityNoise[x] * (salinity / 40);       // Salinity effect
-        
-        // Combined environmental effect
-        const environmentalEffect = tempEffect + salEffect + seasonalEffect;
-        
-        // Apply environmental effect with some randomness
-        if (Math.random() < Math.abs(environmentalEffect) * 0.3) {
-            newStates[x] = bit === 0 ? 1 : 0; // Flip the bit sometimes
-        } else {
-            newStates[x] = bit;
-        }
-        
-        // Calculate color based on cell state and environmental factors
-        let r, g, b;
-        
-        if (newStates[x] === 1) {
-            // Mix between base and accent color based on environmental factors
-            const mixRatio = 0.3 + (Math.abs(environmentalEffect) * 0.7);
             
-            // Add some randomness to colors for natural variation
-            const randomVariation = (Math.random() - 0.5) * colorVariation * 50;
+            // Check if animation is complete
+            if (animationState.currentRow >= animationState.totalRows) {
+                // Animation complete
+                animationState.isPlaying = false;
+                updatePlayPauseButton();
+                statusUpdate.textContent = "Growth simulation complete.";
+                
+                // Generate full resolution image
+                generateFullResolutionPattern();
+                
+                return;
+            }
             
-            r = Math.floor(lerp(baseColor.r, accentColor.r, mixRatio) + randomVariation);
-            g = Math.floor(lerp(baseColor.g, accentColor.g, mixRatio) + randomVariation);
-            b = Math.floor(lerp(baseColor.b, accentColor.b, mixRatio) + randomVariation);
-        } else {
-            // Base color with slight variations
-            const randomVariation = (Math.random() - 0.5) * colorVariation * 30;
+            // Continue animation
+            animationState.animationFrameId = requestAnimationFrame(animateGrowth);
+        }
+
+        // Format time display (convert rows to years and months)
+        function formatTimeDisplay(rows) {
+            const totalMonths = Math.floor(rows * animationState.monthsPerRow);
+            const years = Math.floor(totalMonths / 12);
+            const months = totalMonths % 12;
             
-            r = Math.floor(baseColor.r + randomVariation);
-            g = Math.floor(baseColor.g + randomVariation);
-            b = Math.floor(baseColor.b + randomVariation);
+            return `${years}y ${months}m`;
         }
-        
-        // Clamp RGB values to valid range
-        r = Math.max(0, Math.min(255, r));
-        g = Math.max(0, Math.min(255, g));
-        b = Math.max(0, Math.min(255, b));
-        
-        // Set pixel color
-        const pixelIndex = x * 4;
-        rowData[pixelIndex] = r;
-        rowData[pixelIndex + 1] = g;
-        rowData[pixelIndex + 2] = b;
-        rowData[pixelIndex + 3] = 255; // Fully opaque
-    }
-    
-    // Update states for next row
-    cellStates = newStates;
-}
 
-// Generate wave interference pattern row
-function generateWaveRow(rowData, width, y, params) {
-    const {
-        temperature,
-        salinity,
-        seasonalVariation
-    } = params;
-    
-    const colorVariation = parseInt(colorVariationInput.value) / 100;
-    
-    // Temperature affects wave speed/frequency
-    const tempFactor = temperature / 20;
-    
-    // Salinity affects wave amplitude
-    const salinityFactor = salinity / 30;
-    
-    // Seasonal effect - varies with position
-    const seasonalPhase = Math.sin(y * 0.01) * seasonalVariation * Math.PI;
-    
-    for (let x = 0; x < width; x++) {
-        // Calculate combined wave effect at this point
-        let waveValue = 0;
-        
-        for (const source of waveSources) {
-            const dx = x - source.x;
-            const dy = y - source.y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
+        // Initialize pattern blend based on selected pattern type
+        function initializePatternBlend() {
+            const patternType = patternTypeSelect.value;
             
-            // Wave equation with environmental factors
-            const angle = distance * source.frequency * tempFactor + source.phase + seasonalPhase;
-            const value = Math.sin(angle) * source.amplitude * salinityFactor;
+            // Reset all blend values
+            animationState.patternBlend = { cellular: 0, wave: 0, growth: 0 };
             
-            waveValue += value;
+            // Set primary pattern type to 100%
+            animationState.patternBlend[patternType] = 1;
         }
-        
-        // Normalize wave value to 0-1 range
-        waveValue = (waveValue + waveSources.length) / (waveSources.length * 2);
-        
-        // Add noise for texture
-        const noiseValue = perlinNoise(x * 0.05, y * 0.05) * colorVariation;
-        waveValue = Math.max(0, Math.min(1, waveValue + noiseValue));
-        
-        // Interpolate between base and accent color
-        let r = Math.floor(lerp(baseColor.r, accentColor.r, waveValue));
-        let g = Math.floor(lerp(baseColor.g, accentColor.g, waveValue));
-        let b = Math.floor(lerp(baseColor.b, accentColor.b, waveValue));
-        
-        // Clamp RGB values
-        r = Math.max(0, Math.min(255, r));
-        g = Math.max(0, Math.min(255, g));
-        b = Math.max(0, Math.min(255, b));
-        
-        // Set pixel color
-        const pixelIndex = x * 4;
-        rowData[pixelIndex] = r;
-        rowData[pixelIndex + 1] = g;
-        rowData[pixelIndex + 2] = b;
-        rowData[pixelIndex + 3] = 255; // Fully opaque
-    }
-}
 
-// Generate growth ring pattern row
-function generateGrowthRow(rowData, width, y, params) {
-    const {
-        temperature,
-        salinity,
-        seasonalVariation
-    } = params;
-    
-    const complexity = parseInt(complexityInput.value);
-    const colorVariation = parseInt(colorVariationInput.value) / 100;
-    
-    // Center of the shell (growth origin)
-    const centerX = width / 2;
-    const centerY = previewCanvas.height / 2;
-    
-    // Growth parameters
-    const growthRate = 0.5 + (temperature / 35); // Higher temperature, faster growth
-    const growthVariation = 0.1 + (complexity / 100);
-    const ringDensity = 5 + (complexity / 10);
-    
-    // Salinity affects pattern definition
-    const patternDefinition = 0.5 + (salinity / 40);
-    
-    // Seasonal effect - varies with vertical position
-    const seasonalEffect = Math.sin(y * 0.1) * seasonalVariation;
-    
-    for (let x = 0; x < width; x++) {
-        // Calculate distance from center (normalized)
-        const dx = (x - centerX) / width;
-        const dy = (y - centerY) / previewCanvas.height;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        
-        // Calculate angle from center
-        const angle = Math.atan2(dy, dx);
-        
-        // Growth rings - vary with distance
-        const ring = Math.sin(distance * ringDensity * Math.PI * 2);
-        
-        // Add radial variation based on angle
-        const radialVariation = Math.sin(angle * 5) * growthVariation;
-        
-        // Add noise for texture
-        const noise = perlinNoise(x * 0.01, y * 0.01) * 0.5;
-        
-        // Combined pattern value
-        let patternValue = (ring + radialVariation + seasonalEffect + noise) * patternDefinition;
-        patternValue = (patternValue + 1) / 2; // Normalize to 0-1
-        
-        // Add growth rate effect
-        patternValue *= (1 - Math.pow(distance, growthRate));
-        
-        // Add color variation
-        const colorNoise = (Math.random() - 0.5) * colorVariation;
-        patternValue = Math.max(0, Math.min(1, patternValue + colorNoise));
-        
-        // Interpolate between base and accent color
-        let r = Math.floor(lerp(baseColor.r, accentColor.r, patternValue));
-        let g = Math.floor(lerp(baseColor.g, accentColor.g, patternValue));
-        let b = Math.floor(lerp(baseColor.b, accentColor.b, patternValue));
-        
-        // Clamp RGB values
-        r = Math.max(0, Math.min(255, r));
-        g = Math.max(0, Math.min(255, g));
-        b = Math.max(0, Math.min(255, b));
-        
-        // Set pixel color
-        const pixelIndex = x * 4;
-        rowData[pixelIndex] = r;
-        rowData[pixelIndex + 1] = g;
-        rowData[pixelIndex + 2] = b;
-        rowData[pixelIndex + 3] = 255; // Fully opaque
-    }
-}
-    // Environmental Events and Visualization Functions
-// Add this after the previous JavaScript code
-
-// Generate random environmental events
-function generateEnvironmentalEvents() {
-    const eventCount = parseInt(environmentalEventsInput.value);
-    const totalRows = animationState.totalRows;
-    
-    // Clear existing events
-    animationState.growthEvents = [];
-    
-    // If no events, return
-    if (eventCount === 0) return;
-    
-    // Generate random events
-    for (let i = 0; i < eventCount; i++) {
-        // Random event type
-        const eventTypes = ['temperature', 'salinity', 'storm'];
-        const type = eventTypes[Math.floor(Math.random() * eventTypes.length)];
-        
-        // Random event timing and duration
-        const startRow = Math.floor(Math.random() * (totalRows * 0.9)); // Start in first 90% of rows
-        const duration = Math.floor((totalRows * 0.05) + (Math.random() * totalRows * 0.15)); // 5-20% of total rows
-        const endRow = Math.min(startRow + duration, totalRows - 1);
-        const peakRow = startRow + Math.floor(duration / 2); // Peak in the middle
-        
-        // Random intensity (0.2 to 1.0)
-        const intensity = 0.2 + (Math.random() * 0.8);
-        
-        // Create event object
-        const event = {
-            type,
-            startRow,
-            endRow,
-            peakRow,
-            intensity,
-            name: getEventName(type, intensity),
-            description: getEventDescription(type, intensity, animationState.climateScenario)
-        };
-        
-        // Add to events array
-        animationState.growthEvents.push(event);
-    }
-    
-    // Sort events by start row
-    animationState.growthEvents.sort((a, b) => a.startRow - b.startRow);
-}
-
-// Generate acidification events
-function generateAcidificationEvents() {
-    const climateScenario = animationState.climateScenario;
-    const totalRows = animationState.totalRows;
-    
-    // Clear existing events
-    animationState.acidificationEvents = [];
-    
-    // Number of events depends on climate scenario
-    let eventCount = 0;
-    switch (climateScenario) {
-        case 'pre-industrial':
-            eventCount = 0; // No acidification events
-            break;
-        case 'current':
-            eventCount = 1; // Occasional acidification event
-            break;
-        case 'near-future':
-            eventCount = 2; // More frequent acidification events
-            break;
-        case 'worst-case':
-            eventCount = 4; // Severe and frequent acidification events
-            break;
-    }
-    
-    // If no events, return
-    if (eventCount === 0) return;
-    
-    // Generate acidification events
-    for (let i = 0; i < eventCount; i++) {
-        // Random event timing and duration
-        const startRow = Math.floor(Math.random() * (totalRows * 0.9)); // Start in first 90% of rows
-        const duration = Math.floor((totalRows * 0.08) + (Math.random() * totalRows * 0.15)); // 8-23% of total rows
-        const endRow = Math.min(startRow + duration, totalRows - 1);
-        const peakRow = startRow + Math.floor(duration / 2); // Peak in the middle
-        
-        // Intensity depends on climate scenario
-        let baseIntensity = 0;
-        switch (climateScenario) {
-            case 'current':
-                baseIntensity = 0.2 + (Math.random() * 0.2); // 0.2-0.4
-                break;
-            case 'near-future':
-                baseIntensity = 0.4 + (Math.random() * 0.3); // 0.4-0.7
-                break;
-            case 'worst-case':
-                baseIntensity = 0.6 + (Math.random() * 0.4); // 0.6-1.0
-                break;
-        }
-        
-        // Create event object
-        const event = {
-            type: 'acidification',
-            startRow,
-            endRow,
-            peakRow,
-            intensity: baseIntensity,
-            name: `${baseIntensity < 0.4 ? 'Mild' : baseIntensity < 0.7 ? 'Moderate' : 'Severe'} Acidification Event`,
-            description: getAcidificationDescription(baseIntensity, climateScenario)
-        };
-        
-        // Add to events array
-        animationState.acidificationEvents.push(event);
-    }
-    
-    // Sort events by start row
-    animationState.acidificationEvents.sort((a, b) => a.startRow - b.startRow);
-}
-
-// Generate microplastic events
-function generateMicroplasticEvents() {
-    const climateScenario = animationState.climateScenario;
-    const totalRows = animationState.totalRows;
-    
-    // Clear existing events
-    animationState.microplasticEvents = [];
-    
-    // Number of events depends on climate scenario
-    let eventCount = 0;
-    switch (climateScenario) {
-        case 'pre-industrial':
-            eventCount = 0; // No microplastic events
-            break;
-        case 'current':
-            eventCount = 2; // Occasional microplastic events
-            break;
-        case 'near-future':
-            eventCount = 3; // More frequent microplastic events
-            break;
-        case 'worst-case':
-            eventCount = 5; // Severe and frequent microplastic events
-            break;
-    }
-    
-    // If no events, return
-    if (eventCount === 0) return;
-    
-    // Generate microplastic events
-    for (let i = 0; i < eventCount; i++) {
-        // Random event timing and duration
-        const startRow = Math.floor(Math.random() * (totalRows * 0.9)); // Start in first 90% of rows
-        const duration = Math.floor((totalRows * 0.05) + (Math.random() * totalRows * 0.1)); // 5-15% of total rows
-        const endRow = Math.min(startRow + duration, totalRows - 1);
-        const peakRow = startRow + Math.floor(duration / 2); // Peak in the middle
-        
-        // Intensity depends on climate scenario
-        let baseIntensity = 0;
-        switch (climateScenario) {
-            case 'current':
-                baseIntensity = 0.3 + (Math.random() * 0.2); // 0.3-0.5
-                break;
-            case 'near-future':
-                baseIntensity = 0.4 + (Math.random() * 0.3); // 0.4-0.7
-                break;
-            case 'worst-case':
-                baseIntensity = 0.5 + (Math.random() * 0.5); // 0.5-1.0
-                break;
-        }
-        
-        // Create event object
-        const event = {
-            type: 'microplastic',
-            startRow,
-            endRow,
-            peakRow,
-            intensity: baseIntensity,
-            name: `${baseIntensity < 0.4 ? 'Low' : baseIntensity < 0.7 ? 'Moderate' : 'High'} Microplastic Contamination`,
-            description: getEventDescription('microplastic', baseIntensity, climateScenario)
-        };
-        
-        // Add to events array
-        animationState.microplasticEvents.push(event);
-    }
-    
-    // Sort events by start row
-    animationState.microplasticEvents.sort((a, b) => a.startRow - b.startRow);
-}
-
-// Get event name based on type and intensity
-function getEventName(type, intensity) {
-    const intensityLabel = intensity < 0.4 ? 'Mild' : intensity < 0.7 ? 'Moderate' : 'Severe';
-    
-    switch (type) {
-        case 'temperature':
-            return `${intensityLabel} Temperature Change`;
-        case 'salinity':
-            return `${intensityLabel} Salinity Shift`;
-        case 'storm':
-            return `${intensityLabel} Storm Event`;
-        case 'microplastic':
-            return `${intensityLabel} Microplastic Contamination`;
-        default:
-            return 'Environmental Event';
-    }
-}
-
-// Get event description based on type and intensity
-function getEventDescription(type, intensity, climateScenario) {
-    let prefix = '';
-    
-    // Add climate scenario context for near-future and worst-case
-    if (climateScenario === 'near-future' && type === 'temperature') {
-        prefix = 'Due to climate change, a ';
-    } else if (climateScenario === 'worst-case' && type === 'temperature') {
-        prefix = 'In this extreme climate scenario, a ';
-    }
-    
-    switch (type) {
-        case 'temperature':
-            if (intensity < 0.4) {
-                return prefix + 'mild warming period affects shell growth rate slightly.';
-            } else if (intensity < 0.7) {
-                return prefix + 'moderate temperature increase accelerates shell growth and changes pattern formation.';
+        // Update pattern blend based on clam age and environmental factors
+        function updatePatternBlend(row) {
+            const age = row / animationState.totalRows; // Normalized age (0-1)
+            const patternBlendingFactor = parseInt(patternBlendingInput.value) / 100; // How much blending occurs (0-1)
+            const startingPattern = patternTypeSelect.value; // Initial dominant pattern
+            
+            // If blending is disabled, keep the initial pattern
+            if (patternBlendingFactor === 0) {
+                animationState.patternBlend = { cellular: 0, wave: 0, growth: 0 };
+                animationState.patternBlend[startingPattern] = 1;
+                return;
+            }
+            
+            // Base pattern evolution:
+            // - Younger clams favor cellular patterns (rapid growth)
+            // - Middle-aged clams favor wave patterns (stable growth)
+            // - Older clams favor growth rings (slower, more defined growth)
+            let cellularWeight = Math.max(0, 1 - (age * 2)); // Dominant when young
+            let waveWeight = Math.sin(Math.PI * age); // Peaks in middle age
+            let growthWeight = Math.min(1, age * 2); // Increases with age
+            
+            // Adjust weights based on starting pattern to make that pattern more prominent
+            switch (startingPattern) {
+                case 'cellular':
+                    cellularWeight *= 1.5;
+                    break;
+                case 'wave':
+                    waveWeight *= 1.5;
+                    break;
+                case 'growth':
+                    growthWeight *= 1.5;
+                    break;
+            }
+            
+            // Get current environmental parameters
+            const params = getCurrentEnvironmentalParams(row);
+            
+            // Environmental modifiers
+            if (params.temperature > 30) {
+                // Stress pattern changes during extreme heat - favors cellular (chaotic) growth
+                cellularWeight += 0.3;
+                growthWeight -= 0.2;
+            }
+            
+            if (params.acidification > 0.5) {
+                // Acidification disrupts ordered growth - favors more chaotic patterns
+                cellularWeight += 0.2;
+                waveWeight -= 0.1;
+                growthWeight -= 0.1;
+            }
+            
+            // Apply pattern blending factor
+            cellularWeight = (1 - patternBlendingFactor) * animationState.patternBlend.cellular + patternBlendingFactor * cellularWeight;
+            waveWeight = (1 - patternBlendingFactor) * animationState.patternBlend.wave + patternBlendingFactor * waveWeight;
+            growthWeight = (1 - patternBlendingFactor) * animationState.patternBlend.growth + patternBlendingFactor * growthWeight;
+            
+            // Normalize weights to sum to 1
+            const totalWeight = cellularWeight + waveWeight + growthWeight;
+            if (totalWeight > 0) {
+                cellularWeight /= totalWeight;
+                waveWeight /= totalWeight;
+                growthWeight /= totalWeight;
             } else {
-                return prefix + 'severe heat event significantly alters growth patterns and shell density.';
+                // Fallback if all weights are zero
+                cellularWeight = 1;
+                waveWeight = 0;
+                growthWeight = 0;
             }
-        
-        case 'salinity':
-            if (intensity < 0.4) {
-                return 'A slight increase in water salinity affects shell mineralization.';
-            } else if (intensity < 0.7) {
-                return 'Moderate salinity change alters the shell pattern definition and coloration.';
-            } else {
-                return 'Dramatic salinity shift causes stress and distinct pattern banding.';
-            }
-        
-        case 'storm':
-            if (intensity < 0.4) {
-                return 'Minor storm brings fresh water and slight temperature drop.';
-            } else if (intensity < 0.7) {
-                return 'Significant storm disrupts normal growth with temperature and salinity changes.';
-            } else {
-                return 'Major storm event dramatically alters water conditions, creating distinctive growth bands.';
-            }
-        
-        case 'microplastic':
-            if (intensity < 0.4) {
-                return 'Low-level microplastic contamination appears in the shell structure.';
-            } else if (intensity < 0.7) {
-                return 'Moderate microplastic pollution is incorporated into the shell, creating small abnormalities.';
-            } else {
-                return 'Severe microplastic contamination event causes significant incorporation of particles into shell structure.';
-            }
-        
-        default:
-            return 'Environmental conditions changed, affecting shell growth.';
-    }
-}
-
-// Get acidification event description
-function getAcidificationDescription(intensity, climateScenario) {
-    let prefix = '';
-    
-    // Add climate scenario context for near-future and worst-case
-    if (climateScenario === 'near-future') {
-        prefix = 'Due to increasing ocean acidification, ';
-    } else if (climateScenario === 'worst-case') {
-        prefix = 'In this extreme acidification scenario, ';
-    }
-    
-    if (intensity < 0.4) {
-        return prefix + 'mild pH decrease causes slight shell thinning.';
-    } else if (intensity < 0.7) {
-        return prefix + 'moderate acidification disrupts calcium carbonate deposition, causing pattern irregularities.';
-    } else {
-        return prefix + 'severe acidification event significantly weakens shell structure and creates visible disruptions.';
-    }
-}
-
-// Update growth info display
-function updateGrowthInfo(currentRow) {
-    // Calculate age
-    const currentAge = formatTimeDisplay(currentRow);
-    
-    // Basic info
-    let infoHTML = `<h3>Growth Information</h3>`;
-    
-    if (currentRow === 0) {
-        infoHTML += `<p>Ready to start growth simulation. Press the play button to begin.</p>`;
-    } else {
-        infoHTML += `<p>Current age: ${currentAge}</p>`;
-        
-        // Get current environmental conditions
-        const currentParams = getCurrentEnvironmentalParams(currentRow);
-        infoHTML += `<p>Current water temperature: ${currentParams.temperature.toFixed(1)}°C</p>`;
-        infoHTML += `<p>Current water salinity: ${currentParams.salinity.toFixed(1)} ppt</p>`;
-        
-        // Add acidification and microplastics
-        infoHTML += `<p>Acidification level: ${(currentParams.acidification * 100).toFixed(1)}%</p>`;
-        infoHTML += `<p>Microplastic concentration: ${(currentParams.microplastics * 100).toFixed(1)}%</p>`;
-        
-        // Add climate scenario badge
-        const climateScenario = animationState.climateScenario;
-        infoHTML += `<p>Climate Scenario: <span class="climate-badge ${climateScenario}">${formatClimateScenario(climateScenario)}</span></p>`;
-        
-        // Add seasonal info
-        const seasonValue = Math.sin(currentRow * 0.05) * currentParams.seasonalVariation;
-        let season = "";
-        if (seasonValue > 0.3) season = "Summer";
-        else if (seasonValue < -0.3) season = "Winter";
-        else if (seasonValue >= 0) season = "Spring";
-        else season = "Fall";
-        
-        infoHTML += `<p>Current season: ${season}</p>`;
-        
-        // Add pattern blend info
-        const { cellular, wave, growth } = animationState.patternBlend;
-        infoHTML += `<p>Current pattern algorithm: 
-            <span class="pattern-badge cellular">${Math.round(cellular * 100)}%</span>
-            <span class="pattern-badge wave">${Math.round(wave * 100)}%</span>
-            <span class="pattern-badge growth">${Math.round(growth * 100)}%</span>
-        </p>`;
-        
-        // Check for active events
-        const activeEvents = animationState.growthEvents.filter(
-            event => currentRow >= event.startRow && currentRow <= event.endRow
-        );
-        
-        const activeAcidificationEvents = animationState.acidificationEvents.filter(
-            event => currentRow >= event.startRow && currentRow <= event.endRow
-        );
-        
-        const activeMicroplasticEvents = animationState.microplasticEvents.filter(
-            event => currentRow >= event.startRow && currentRow <= event.endRow
-        );
-        
-        if (activeEvents.length > 0 || activeAcidificationEvents.length > 0 || activeMicroplasticEvents.length > 0) {
-            infoHTML += `<p>Active environmental events:</p>`;
             
-            // Add growth events
-            activeEvents.forEach(event => {
-                const eventClass = event.type;
-                infoHTML += `
-                    <div class="growth-event ${eventClass}">
-                        <div class="timestamp">${formatTimeDisplay(event.startRow)} - ${formatTimeDisplay(event.endRow)}</div>
-                        <strong>${event.name}</strong>
-                        <p>${event.description}</p>
-                    </div>
-                `;
+            // Update pattern blend
+            animationState.patternBlend = {
+                cellular: cellularWeight,
+                wave: waveWeight,
+                growth: growthWeight
+            };
+        }
+
+        // Update pattern blend visualization
+        function updatePatternBlendVisualization(row) {
+            // Get current pattern blend
+            const { cellular, wave, growth } = animationState.patternBlend;
+            
+            // Update bars
+            const cellularBar = blendBars.querySelector('.blend-bar.cellular');
+            const waveBar = blendBars.querySelector('.blend-bar.wave');
+            const growthBar = blendBars.querySelector('.blend-bar.growth');
+            
+            cellularBar.style.width = `${cellular * 100}%`;
+            waveBar.style.width = `${wave * 100}%`;
+            growthBar.style.width = `${growth * 100}%`;
+            
+            // Update labels
+            cellularBlendLabel.textContent = `Cellular: ${Math.round(cellular * 100)}%`;
+            waveBlendLabel.textContent = `Wave: ${Math.round(wave * 100)}%`;
+            growthBlendLabel.textContent = `Growth: ${Math.round(growth * 100)}%`;
+        }
+
+        // Generate full resolution pattern
+        function generateFullResolutionPattern() {
+            try {
+                // Clear canvas
+                fullResCtx.clearRect(0, 0, fullResCanvas.width, fullResCanvas.height);
+                
+                // Create a scaled version of the preview canvas
+                const scaleFactor = fullResCanvas.width / previewCanvas.width;
+                
+                // Draw scaled version to full resolution canvas
+                fullResCtx.imageSmoothingEnabled = false; // Disable smoothing for pixel pattern
+                fullResCtx.drawImage(
+                    previewCanvas,
+                    0, 0, previewCanvas.width, previewCanvas.height,
+                    0, 0, fullResCanvas.width, fullResCanvas.height
+                );
+                
+                statusUpdate.textContent = "Full resolution pattern generated successfully";
+            } catch (error) {
+                console.error("Error generating full resolution pattern:", error);
+                statusUpdate.textContent = "Error generating full resolution pattern";
+            }
+        }
+
+        // Download full resolution image
+        function downloadFullResolution() {
+            // Make sure we have a full resolution pattern
+            if (animationState.rowsCompleted < animationState.totalRows) {
+                // Not complete, generate full pattern first
+                generateFullResolutionPattern();
+            }
+            
+            // Create a temporary link element
+            const link = document.createElement('a');
+            link.download = 'asari-clam-pattern.png';
+            
+            // Convert canvas to data URL
+            link.href = fullResCanvas.toDataURL('image/png');
+            
+            // Append to the document, click, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            statusUpdate.textContent = "Full resolution pattern downloaded";
+        }
+
+        // Utility functions
+        function hexToRgb(hex) {
+            // Remove # if present
+            hex = hex.replace('#', '');
+            
+            // Parse hex values
+            const r = parseInt(hex.substring(0, 2), 16);
+            const g = parseInt(hex.substring(2, 4), 16);
+            const b = parseInt(hex.substring(4, 6), 16);
+            
+            return { r, g, b };
+        }
+
+        // Linear interpolation function
+        function lerp(a, b, t) {
+            return a + (b - a) * t;
+        }
+
+        // Simple 1D Simplex noise implementation
+        function simplex1D(size, scale) {
+            const noise = new Array(size);
+            
+            for (let i = 0; i < size; i++) {
+                noise[i] = Math.sin(i * scale) * 0.5 + Math.sin(i * scale * 0.631) * 0.35 + Math.sin(i * scale * 1.754) * 0.15;
+            }
+            
+            return noise;
+        }
+
+        // Perlin noise implementation (simplified)
+        function perlinNoise(x, y) {
+            // Simplified Perlin noise function
+            return Math.sin(x * 10) * Math.cos(y * 10) * 0.5 + 
+                    Math.sin(x * 20 + 5) * Math.cos(y * 20 + 3) * 0.25 + 
+                    Math.sin(x * 40 + 13) * Math.cos(y * 40 + 7) * 0.125;
+        }
+
+        // JavaScript from Part 7 - Pattern Generation
+        // Initialize pattern generation
+        let cellStates, temperatureNoise, salinityNoise, waveSources, baseColor, accentColor, microplasticColor;
+        let environmentParams = {};
+
+        function initializePatternGeneration() {
+            const width = previewCanvas.width;
+            const complexity = parseInt(complexityInput.value);
+            const temperature = parseInt(temperatureInput.value);
+            const salinity = parseInt(salinityInput.value);
+            const acidification = parseInt(acidificationInput.value) / 100;
+            const microplastics = parseInt(microplasticsInput.value) / 100;
+            
+            // Store initial environmental parameters
+            environmentParams = {
+                temperature: temperature,
+                salinity: salinity,
+                acidification: acidification,
+                microplastics: microplastics,
+                seasonalVariation: parseInt(seasonalVariationInput.value) / 100
+            };
+            
+            // Parse colors
+            baseColor = hexToRgb(baseColorInput.value);
+            accentColor = hexToRgb(accentColorInput.value);
+            microplasticColor = hexToRgb(microplasticColorInput.value);
+            
+            // Initialize cellular automaton pattern
+            initializeCellularPattern(width, complexity, temperature, salinity);
+            
+            // Initialize wave interference pattern
+            initializeWavePattern(width, complexity, temperature, salinity);
+            
+            // Growth ring pattern doesn't need specific initialization
+        }
+
+        // Initialize cellular automaton pattern
+        function initializeCellularPattern(width, complexity, temperature, salinity) {
+            // Rule number for cellular automaton
+            const rule = Math.floor(complexity / 10) + 30;
+            
+            // Initialize cell states
+            cellStates = new Array(width).fill(0);
+            
+            // Create noise values for environmental factors
+            temperatureNoise = simplex1D(width, temperature / 10);
+            salinityNoise = simplex1D(width, salinity / 5);
+            
+            // Cell density affected by salinity
+            const cellDensity = 0.3 + (salinity / 100);
+            
+            // Initialize with some random cells
+            for (let x = 0; x < width; x++) {
+                if (Math.random() < cellDensity) {
+                    cellStates[x] = 1;
+                }
+            }
+        }
+
+        // Initialize wave interference pattern
+        function initializeWavePattern(width, complexity, temperature, salinity) {
+            // Wave parameters based on input settings
+            const waveCount = 3 + Math.floor(complexity / 20); // Number of wave sources
+            waveSources = [];
+            
+            // Create wave sources
+            for (let i = 0; i < waveCount; i++) {
+                waveSources.push({
+                    x: Math.random() * width,
+                    y: Math.random() * previewCanvas.height,
+                    frequency: 0.01 + (Math.random() * 0.02),
+                    amplitude: 0.5 + (Math.random() * 0.5),
+                    phase: Math.random() * Math.PI * 2
+                });
+            }
+        }
+
+        // Draw next row of the pattern
+        function drawNextRow() {
+            if (animationState.currentRow >= animationState.totalRows) {
+                return;
+            }
+            
+            const width = previewCanvas.width;
+            const y = animationState.currentRow;
+            
+            // Get current environmental parameters (may be modified by events)
+            const rowParams = getCurrentEnvironmentalParams(y);
+            
+            // Create array for this row's pixel data
+            const rowData = new Uint8ClampedArray(width * 4);
+            
+            // Apply climate change effects to environmental parameters
+            applyClimateChangeEffects(y, rowParams);
+            
+            // Generate row with blended pattern algorithms
+            generateBlendedPatternRow(rowData, width, y, rowParams);
+            
+            // Draw the row on the canvas
+            const imageData = new ImageData(rowData, width, 1);
+            previewCtx.putImageData(imageData, 0, y);
+            
+            // Store environmental data for this row
+            animationState.environmentalHistory.push({
+                row: y,
+                temperature: rowParams.temperature,
+                salinity: rowParams.salinity,
+                acidification: rowParams.acidification,
+                microplastics: rowParams.microplastics,
+                seasonalVariation: rowParams.seasonalVariation
             });
             
-            // Add acidification events
-            activeAcidificationEvents.forEach(event => {
-                infoHTML += `
-                    <div class="growth-event acidification">
-                        <div class="timestamp">${formatTimeDisplay(event.startRow)} - ${formatTimeDisplay(event.endRow)}</div>
-                        <strong>${event.name}</strong>
-                        <p>${event.description}</p>
-                    </div>
-                `;
+            // Increment current row
+            animationState.currentRow++;
+            animationState.rowsCompleted = animationState.currentRow;
+        }
+
+        // Apply climate change effects to environmental parameters
+        function applyClimateChangeEffects(row, params) {
+            const climateScenario = animationState.climateScenario;
+            const totalRows = animationState.totalRows;
+            const progress = row / totalRows; // Normalized growth progress (0-1)
+            
+            // Base parameters unchanged for pre-industrial
+            if (climateScenario === 'pre-industrial') {
+                return;
+            }
+            
+            // Apply climate change effects based on scenario
+            switch (climateScenario) {
+                case 'current':
+                    // Slight temperature increase over time
+                    params.temperature += progress * 2;
+                    
+                    // Slight acidification increase
+                    params.acidification += progress * 0.1;
+                    break;
+                
+                case 'near-future':
+                    // Moderate temperature increase (2-3°C)
+                    params.temperature += progress * 5;
+                    
+                    // More acidification
+                    params.acidification += progress * 0.3;
+                    
+                    // More variability in seasonal effects
+                    params.seasonalVariation *= (1 + progress * 0.2);
+                    break;
+                
+                case 'worst-case':
+                    // Severe temperature increase (4-6°C)
+                    params.temperature += progress * 10;
+                    
+                    // Severe acidification
+                    params.acidification += progress * 0.5;
+                    
+                    // Extreme seasonal variability
+                    params.seasonalVariation *= (1 + progress * 0.4);
+                    break;
+            }
+            
+            // Ensure values are within valid ranges
+            params.temperature = Math.max(5, Math.min(40, params.temperature));
+            params.acidification = Math.max(0, Math.min(1, params.acidification));
+            params.seasonalVariation = Math.max(0, Math.min(1, params.seasonalVariation));
+        }
+
+        // Generate blended pattern row using current pattern blend weights
+        function generateBlendedPatternRow(rowData, width, y, params) {
+            // Get current pattern blend weights
+            const { cellular, wave, growth } = animationState.patternBlend;
+            
+            // If one pattern has 100% weight, use that pattern directly
+            if (cellular === 1) {
+                generateCellularRow(rowData, width, y, params);
+                return;
+            }
+            if (wave === 1) {
+                generateWaveRow(rowData, width, y, params);
+                return;
+            }
+            if (growth === 1) {
+                generateGrowthRow(rowData, width, y, params);
+                return;
+            }
+            
+            // Create temporary arrays for each pattern type
+            const cellularData = new Uint8ClampedArray(width * 4);
+            const waveData = new Uint8ClampedArray(width * 4);
+            const growthData = new Uint8ClampedArray(width * 4);
+            
+            // Generate each pattern type
+            if (cellular > 0) {
+                generateCellularRow(cellularData, width, y, params);
+            }
+            if (wave > 0) {
+                generateWaveRow(waveData, width, y, params);
+            }
+            if (growth > 0) {
+                generateGrowthRow(growthData, width, y, params);
+            }
+            
+            // Blend patterns based on weights
+            for (let x = 0; x < width; x++) {
+                const pixelIndex = x * 4;
+                
+                // Weighted average of R, G, B values from each pattern
+                for (let c = 0; c < 3; c++) {
+                    rowData[pixelIndex + c] = Math.round(
+                        (cellularData[pixelIndex + c] * cellular) +
+                        (waveData[pixelIndex + c] * wave) +
+                        (growthData[pixelIndex + c] * growth)
+                    );
+                }
+                
+                // Alpha is always 255 (opaque)
+                rowData[pixelIndex + 3] = 255;
+            }
+            
+            // Add microplastic particles
+            addMicroplasticParticles(rowData, width, y, params);
+            
+            // Apply acidification effects
+            applyAcidificationEffects(rowData, width, y, params);
+        }
+
+        // Add microplastic particles to the pattern
+        function addMicroplasticParticles(rowData, width, y, params) {
+            const microplasticLevel = params.microplastics;
+            
+            // Skip if no microplastics
+            if (microplasticLevel <= 0) {
+                return;
+            }
+            
+            // Number of potential microplastic particles in this row
+            const particleCount = Math.floor(width * microplasticLevel * 0.1);
+            
+            // Add particles randomly
+            for (let i = 0; i < particleCount; i++) {
+                // Random position in the row
+                const x = Math.floor(Math.random() * width);
+                const pixelIndex = x * 4;
+                
+                // Only add particles with some probability
+                if (Math.random() < microplasticLevel) {
+                    // Microplastic color with some variation
+                    const r = microplasticColor.r + Math.floor((Math.random() - 0.5) * 20);
+                    const g = microplasticColor.g + Math.floor((Math.random() - 0.5) * 20);
+                    const b = microplasticColor.b + Math.floor((Math.random() - 0.5) * 20);
+                    
+                    // Set pixel color
+                    rowData[pixelIndex] = r;
+                    rowData[pixelIndex + 1] = g;
+                    rowData[pixelIndex + 2] = b;
+                }
+            }
+        }
+
+        // Apply acidification effects to the pattern
+        function applyAcidificationEffects(rowData, width, y, params) {
+            const acidificationLevel = params.acidification;
+            
+            // Skip if no acidification
+            if (acidificationLevel <= 0) {
+                return;
+            }
+            
+            // Color fading effect - represents calcium carbonate dissolution
+            for (let x = 0; x < width; x++) {
+                // Apply effect with varying intensity across the row
+                const localEffect = acidificationLevel * (0.5 + Math.sin(x * 0.01) * 0.5);
+                
+                // Skip some pixels randomly to create uneven effect
+                if (Math.random() < localEffect * 0.7) {
+                    const pixelIndex = x * 4;
+                    
+                    // Fade color toward lighter, more translucent shade
+                    rowData[pixelIndex] = Math.min(255, rowData[pixelIndex] + Math.floor(localEffect * 40));
+                    rowData[pixelIndex + 1] = Math.min(255, rowData[pixelIndex + 1] + Math.floor(localEffect * 40));
+                    rowData[pixelIndex + 2] = Math.min(255, rowData[pixelIndex + 2] + Math.floor(localEffect * 40));
+                }
+            }
+            
+            // Pattern disruptions - create occasional gaps or distortions
+            if (Math.random() < acidificationLevel * 0.3) {
+                const disruptionStart = Math.floor(Math.random() * width * 0.7);
+                const disruptionWidth = Math.floor(5 + Math.random() * 20 * acidificationLevel);
+                
+                for (let x = disruptionStart; x < disruptionStart + disruptionWidth && x < width; x++) {
+                    const pixelIndex = x * 4;
+                    
+                    // Create whitish disruption
+                    rowData[pixelIndex] = Math.min(255, rowData[pixelIndex] + 80);
+                    rowData[pixelIndex + 1] = Math.min(255, rowData[pixelIndex + 1] + 80);
+                    rowData[pixelIndex + 2] = Math.min(255, rowData[pixelIndex + 2] + 80);
+                }
+            }
+        }
+
+        // Get current environmental parameters (affected by events)
+        function getCurrentEnvironmentalParams(row) {
+            // Start with base parameters
+            const params = { ...environmentParams };
+            
+            // Apply seasonal variation
+            const seasonalFrequency = 0.05; // Cycles per year
+            const monthsElapsed = row * animationState.monthsPerRow;
+            const yearsElapsed = monthsElapsed / 12;
+            const seasonalPhase = Math.sin(yearsElapsed * 2 * Math.PI * seasonalFrequency);
+            const seasonalEffect = seasonalPhase * params.seasonalVariation;
+            
+            // Seasonal effect on temperature (warmer in summer, cooler in winter)
+            params.temperature += seasonalEffect * 10;
+            
+            // Apply environmental events
+            for (const event of animationState.growthEvents) {
+                if (row >= event.startRow && row <= event.endRow) {
+                    // Apply event effect
+                    const intensity = event.intensity * (1 - Math.abs((row - event.peakRow) / (event.endRow - event.startRow) * 2));
+                    
+                    if (event.type === 'temperature') {
+                        params.temperature += intensity * 15; // Temperature event (°C)
+                    } else if (event.type === 'salinity') {
+                        params.salinity += intensity * 10; // Salinity event (ppt)
+                    } else if (event.type === 'storm') {
+                        // Storms affect both temperature and salinity
+                        params.temperature -= intensity * 5;
+                        params.salinity -= intensity * 5;
+                    }
+                }
+            }
+            
+            // Apply acidification events
+            for (const event of animationState.acidificationEvents) {
+                if (row >= event.startRow && row <= event.endRow) {
+                    // Apply acidification event effect
+                    const intensity = event.intensity * (1 - Math.abs((row - event.peakRow) / (event.endRow - event.startRow) * 2));
+                    params.acidification += intensity * 0.5; // Increase acidification during event
+                }
+            }
+            
+            // Apply microplastic events
+            for (const event of animationState.microplasticEvents) {
+                if (row >= event.startRow && row <= event.endRow) {
+                    // Apply microplastic event effect
+                    const intensity = event.intensity * (1 - Math.abs((row - event.peakRow) / (event.endRow - event.startRow) * 2));
+                    params.microplastics += intensity * 0.5; // Increase microplastics during event
+                }
+            }
+            
+            // Ensure values are within valid ranges
+            params.temperature = Math.max(5, Math.min(40, params.temperature));
+            params.salinity = Math.max(10, Math.min(40, params.salinity));
+            params.acidification = Math.max(0, Math.min(1, params.acidification));
+            params.microplastics = Math.max(0, Math.min(1, params.microplastics));
+            
+            return params;
+        }
+
+        // Generate cellular automaton pattern row
+        function generateCellularRow(rowData, width, y, params) {
+            const {
+                temperature,
+                salinity,
+                seasonalVariation
+            } = params;
+            
+            const colorVariation = parseInt(colorVariationInput.value) / 100;
+            const rule = Math.floor(parseInt(complexityInput.value) / 10) + 30;
+            
+            // Seasonal effect - varies with position
+            const seasonalFrequency = 0.1 + (seasonalVariation * 0.2);
+            const seasonalEffect = Math.sin(y * seasonalFrequency) * seasonalVariation;
+            
+            // Apply the cellular automaton rule to generate the next row
+            const newStates = new Array(width).fill(0);
+            
+            for (let x = 0; x < width; x++) {
+                // Get the current cell and its neighbors
+                const left = x > 0 ? cellStates[x - 1] : cellStates[width - 1];
+                const center = cellStates[x];
+                const right = x < width - 1 ? cellStates[x + 1] : cellStates[0];
+                
+                // Calculate the rule index
+                const index = (left << 2) | (center << 1) | right;
+                
+                // Apply the rule
+                const bit = (rule >> index) & 1;
+                
+                // Environmental factors influence the cell state
+                const tempEffect = temperatureNoise[x] * (temperature / 35); // Temperature effect
+                const salEffect = salinityNoise[x] * (salinity / 40);       // Salinity effect
+                
+                // Combined environmental effect
+                const environmentalEffect = tempEffect + salEffect + seasonalEffect;
+                
+                // Apply environmental effect with some randomness
+                if (Math.random() < Math.abs(environmentalEffect) * 0.3) {
+                    newStates[x] = bit === 0 ? 1 : 0; // Flip the bit sometimes
+                } else {
+                    newStates[x] = bit;
+                }
+                
+                // Calculate color based on cell state and environmental factors
+                let r, g, b;
+                
+                if (newStates[x] === 1) {
+                    // Mix between base and accent color based on environmental factors
+                    const mixRatio = 0.3 + (Math.abs(environmentalEffect) * 0.7);
+                    
+                    // Add some randomness to colors for natural variation
+                    const randomVariation = (Math.random() - 0.5) * colorVariation * 50;
+                    
+                    r = Math.floor(lerp(baseColor.r, accentColor.r, mixRatio) + randomVariation);
+                    g = Math.floor(lerp(baseColor.g, accentColor.g, mixRatio) + randomVariation);
+                    b = Math.floor(lerp(baseColor.b, accentColor.b, mixRatio) + randomVariation);
+                } else {
+                    // Base color with slight variations
+                    const randomVariation = (Math.random() - 0.5) * colorVariation * 30;
+                    
+                    r = Math.floor(baseColor.r + randomVariation);
+                    g = Math.floor(baseColor.g + randomVariation);
+                    b = Math.floor(baseColor.b + randomVariation);
+                }
+                
+                // Clamp RGB values to valid range
+                r = Math.max(0, Math.min(255, r));
+                g = Math.max(0, Math.min(255, g));
+                b = Math.max(0, Math.min(255, b));
+                
+                // Set pixel color
+                const pixelIndex = x * 4;
+                rowData[pixelIndex] = r;
+                rowData[pixelIndex + 1] = g;
+                rowData[pixelIndex + 2] = b;
+                rowData[pixelIndex + 3] = 255; // Fully opaque
+            }
+            
+            // Update states for next row
+            cellStates = newStates;
+        }
+
+        // Generate wave interference pattern row
+        function generateWaveRow(rowData, width, y, params) {
+            const {
+                temperature,
+                salinity,
+                seasonalVariation
+            } = params;
+            
+            const colorVariation = parseInt(colorVariationInput.value) / 100;
+            
+            // Temperature affects wave speed/frequency
+            const tempFactor = temperature / 20;
+            
+            // Salinity affects wave amplitude
+            const salinityFactor = salinity / 30;
+            
+            // Seasonal effect - varies with position
+            const seasonalPhase = Math.sin(y * 0.01) * seasonalVariation * Math.PI;
+            
+            for (let x = 0; x < width; x++) {
+                // Calculate combined wave effect at this point
+                let waveValue = 0;
+                
+                for (const source of waveSources) {
+                    const dx = x - source.x;
+                    const dy = y - source.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    // Wave equation with environmental factors
+                    const angle = distance * source.frequency * tempFactor + source.phase + seasonalPhase;
+                    const value = Math.sin(angle) * source.amplitude * salinityFactor;
+                    
+                    waveValue += value;
+                }
+                
+                // Normalize wave value to 0-1 range
+                waveValue = (waveValue + waveSources.length) / (waveSources.length * 2);
+                
+                // Add noise for texture
+                const noiseValue = perlinNoise(x * 0.05, y * 0.05) * colorVariation;
+                waveValue = Math.max(0, Math.min(1, waveValue + noiseValue));
+                
+                // Interpolate between base and accent color
+                let r = Math.floor(lerp(baseColor.r, accentColor.r, waveValue));
+                let g = Math.floor(lerp(baseColor.g, accentColor.g, waveValue));
+                let b = Math.floor(lerp(baseColor.b, accentColor.b, waveValue));
+                
+                // Clamp RGB values
+                r = Math.max(0, Math.min(255, r));
+                g = Math.max(0, Math.min(255, g));
+                b = Math.max(0, Math.min(255, b));
+                
+                // Set pixel color
+                const pixelIndex = x * 4;
+                rowData[pixelIndex] = r;
+                rowData[pixelIndex + 1] = g;
+                rowData[pixelIndex + 2] = b;
+                rowData[pixelIndex + 3] = 255; // Fully opaque
+            }
+        }
+
+        // Generate growth ring pattern row
+        function generateGrowthRow(rowData, width, y, params) {
+            const {
+                temperature,
+                salinity,
+                seasonalVariation
+            } = params;
+            
+            const complexity = parseInt(complexityInput.value);
+            const colorVariation = parseInt(colorVariationInput.value) / 100;
+            
+            // Center of the shell (growth origin)
+            const centerX = width / 2;
+            const centerY = previewCanvas.height / 2;
+            
+            // Growth parameters
+            const growthRate = 0.5 + (temperature / 35); // Higher temperature, faster growth
+            const growthVariation = 0.1 + (complexity / 100);
+            const ringDensity = 5 + (complexity / 10);
+            
+            // Salinity affects pattern definition
+            const patternDefinition = 0.5 + (salinity / 40);
+            
+            // Seasonal effect - varies with vertical position
+            const seasonalEffect = Math.sin(y * 0.1) * seasonalVariation;
+            
+            for (let x = 0; x < width; x++) {
+                // Calculate distance from center (normalized)
+                const dx = (x - centerX) / width;
+                const dy = (y - centerY) / previewCanvas.height;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                // Calculate angle from center
+                const angle = Math.atan2(dy, dx);
+                
+                // Growth rings - vary with distance
+                const ring = Math.sin(distance * ringDensity * Math.PI * 2);
+                
+                // Add radial variation based on angle
+                const radialVariation = Math.sin(angle * 5) * growthVariation;
+                
+                // Add noise for texture
+                const noise = perlinNoise(x * 0.01, y * 0.01) * 0.5;
+                
+                // Combined pattern value
+                let patternValue = (ring + radialVariation + seasonalEffect + noise) * patternDefinition;
+                patternValue = (patternValue + 1) / 2; // Normalize to 0-1
+                
+                // Add growth rate effect
+                patternValue *= (1 - Math.pow(distance, growthRate));
+                
+                // Add color variation
+                const colorNoise = (Math.random() - 0.5) * colorVariation;
+                patternValue = Math.max(0, Math.min(1, patternValue + colorNoise));
+                
+                // Interpolate between base and accent color
+                let r = Math.floor(lerp(baseColor.r, accentColor.r, patternValue));
+                let g = Math.floor(lerp(baseColor.g, accentColor.g, patternValue));
+                let b = Math.floor(lerp(baseColor.b, accentColor.b, patternValue));
+                
+                // Clamp RGB values
+                r = Math.max(0, Math.min(255, r));
+                g = Math.max(0, Math.min(255, g));
+                b = Math.max(0, Math.min(255, b));
+                
+                // Set pixel color
+                const pixelIndex = x * 4;
+                rowData[pixelIndex] = r;
+                rowData[pixelIndex + 1] = g;
+                rowData[pixelIndex + 2] = b;
+                rowData[pixelIndex + 3] = 255; // Fully opaque
+            }
+        }
+
+        // JavaScript from Part 8 - Environmental Events
+        // Generate random environmental events
+        function generateEnvironmentalEvents() {
+            const eventCount = parseInt(environmentalEventsInput.value);
+            const totalRows = animationState.totalRows;
+            
+            // Clear existing events
+            animationState.growthEvents = [];
+            
+            // If no events, return
+            if (eventCount === 0) return;
+            
+            // Generate random events
+            for (let i = 0; i < eventCount; i++) {
+                // Random event type
+                const eventTypes = ['temperature', 'salinity', 'storm'];
+                const type = eventTypes[Math.floor(Math.random() * eventTypes.length)];
+                
+                // Random event timing and duration
+                const startRow = Math.floor(Math.random() * (totalRows * 0.9)); // Start in first 90% of rows
+                const duration = Math.floor((totalRows * 0.05) + (Math.random() * totalRows * 0.15)); // 5-20% of total rows
+                const endRow = Math.min(startRow + duration, totalRows - 1);
+                const peakRow = startRow + Math.floor(duration / 2); // Peak in the middle
+                
+                // Random intensity (0.2 to 1.0)
+                const intensity = 0.2 + (Math.random() * 0.8);
+                
+                // Create event object
+                const event = {
+                    type,
+                    startRow,
+                    endRow,
+                    peakRow,
+                    intensity,
+                    name: getEventName(type, intensity),
+                    description: getEventDescription(type, intensity, animationState.climateScenario)
+                };
+                
+                // Add to events array
+                animationState.growthEvents.push(event);
+            }
+            
+            // Sort events by start row
+            animationState.growthEvents.sort((a, b) => a.startRow - b.startRow);
+        }
+
+        // Generate acidification events
+        function generateAcidificationEvents() {
+            const climateScenario = animationState.climateScenario;
+            const totalRows = animationState.totalRows;
+            
+            // Clear existing events
+            animationState.acidificationEvents = [];
+            
+            // Number of events depends on climate scenario
+            let eventCount = 0;
+            switch (climateScenario) {
+                case 'pre-industrial':
+                    eventCount = 0; // No acidification events
+                    break;
+                case 'current':
+                    eventCount = 1; // Occasional acidification event
+                    break;
+                case 'near-future':
+                    eventCount = 2; // More frequent acidification events
+                    break;
+                case 'worst-case':
+                    eventCount = 4; // Severe and frequent acidification events
+                    break;
+            }
+            
+            // If no events, return
+            if (eventCount === 0) return;
+            
+            // Generate acidification events
+            for (let i = 0; i < eventCount; i++) {
+                // Random event timing and duration
+                const startRow = Math.floor(Math.random() * (totalRows * 0.9)); // Start in first 90% of rows
+                const duration = Math.floor((totalRows * 0.08) + (Math.random() * totalRows * 0.15)); // 8-23% of total rows
+                const endRow = Math.min(startRow + duration, totalRows - 1);
+                const peakRow = startRow + Math.floor(duration / 2); // Peak in the middle
+                
+                // Intensity depends on climate scenario
+                let baseIntensity = 0;
+                switch (climateScenario) {
+                    case 'current':
+                        baseIntensity = 0.2 + (Math.random() * 0.2); // 0.2-0.4
+                        break;
+                    case 'near-future':
+                        baseIntensity = 0.4 + (Math.random() * 0.3); // 0.4-0.7
+                        break;
+                    case 'worst-case':
+                        baseIntensity = 0.6 + (Math.random() * 0.4); // 0.6-1.0
+                        break;
+                }
+                
+                // Create event object
+                const event = {
+                    type: 'acidification',
+                    startRow,
+                    endRow,
+                    peakRow,
+                    intensity: baseIntensity,
+                    name: `${baseIntensity < 0.4 ? 'Mild' : baseIntensity < 0.7 ? 'Moderate' : 'Severe'} Acidification Event`,
+                    description: getAcidificationDescription(baseIntensity, climateScenario)
+                };
+                
+                // Add to events array
+                animationState.acidificationEvents.push(event);
+            }
+            
+            // Sort events by start row
+            animationState.acidificationEvents.sort((a, b) => a.startRow - b.startRow);
+        }
+
+        // Generate microplastic events
+        function generateMicroplasticEvents() {
+            const climateScenario = animationState.climateScenario;
+            const totalRows = animationState.totalRows;
+            
+            // Clear existing events
+            animationState.microplasticEvents = [];
+            
+            // Number of events depends on climate scenario
+            let eventCount = 0;
+            switch (climateScenario) {
+                case 'pre-industrial':
+                    eventCount = 0; // No microplastic events
+                    break;
+                case 'current':
+                    eventCount = 2; // Occasional microplastic events
+                    break;
+                case 'near-future':
+                    eventCount = 3; // More frequent microplastic events
+                    break;
+                case 'worst-case':
+                    eventCount = 5; // Severe and frequent microplastic events
+                    break;
+            }
+            
+            // If no events, return
+            if (eventCount === 0) return;
+            
+            // Generate microplastic events
+            for (let i = 0; i < eventCount; i++) {
+                // Random event timing and duration
+                const startRow = Math.floor(Math.random() * (totalRows * 0.9)); // Start in first 90% of rows
+                const duration = Math.floor((totalRows * 0.05) + (Math.random() * totalRows * 0.1)); // 5-15% of total rows
+                const endRow = Math.min(startRow + duration, totalRows - 1);
+                const peakRow = startRow + Math.floor(duration / 2); // Peak in the middle
+                
+                // Intensity depends on climate scenario
+                let baseIntensity = 0;
+                switch (climateScenario) {
+                    case 'current':
+                        baseIntensity = 0.3 + (Math.random() * 0.2); // 0.3-0.5
+                        break;
+                    case 'near-future':
+                        baseIntensity = 0.4 + (Math.random() * 0.3); // 0.4-0.7
+                        break;
+                    case 'worst-case':
+                        baseIntensity = 0.5 + (Math.random() * 0.5); // 0.5-1.0
+                        break;
+                }
+                
+                // Create event object
+                const event = {
+                    type: 'microplastic',
+                    startRow,
+                    endRow,
+                    peakRow,
+                    intensity: baseIntensity,
+                    name: `${baseIntensity < 0.4 ? 'Low' : baseIntensity < 0.7 ? 'Moderate' : 'High'} Microplastic Contamination`,
+                    description: getEventDescription('microplastic', baseIntensity, climateScenario)
+                };
+                
+                // Add to events array
+                animationState.microplasticEvents.push(event);
+            }
+            
+            // Sort events by start row
+            animationState.microplasticEvents.sort((a, b) => a.startRow - b.startRow);
+        }
+
+        // Get event name based on type and intensity
+        function getEventName(type, intensity) {
+            const intensityLabel = intensity < 0.4 ? 'Mild' : intensity < 0.7 ? 'Moderate' : 'Severe';
+            
+            switch (type) {
+                case 'temperature':
+                    return `${intensityLabel} Temperature Change`;
+                case 'salinity':
+                    return `${intensityLabel} Salinity Shift`;
+                case 'storm':
+                    return `${intensityLabel} Storm Event`;
+                case 'microplastic':
+                    return `${intensityLabel} Microplastic Contamination`;
+                default:
+                    return 'Environmental Event';
+            }
+        }
+
+        // Get event description based on type and intensity
+        function getEventDescription(type, intensity, climateScenario) {
+            let prefix = '';
+            
+            // Add climate scenario context for near-future and worst-case
+            if (climateScenario === 'near-future' && type === 'temperature') {
+                prefix = 'Due to climate change, a ';
+            } else if (climateScenario === 'worst-case' && type === 'temperature') {
+                prefix = 'In this extreme climate scenario, a ';
+            }
+            
+            switch (type) {
+                case 'temperature':
+                    if (intensity < 0.4) {
+                        return prefix + 'mild warming period affects shell growth rate slightly.';
+                    } else if (intensity < 0.7) {
+                        return prefix + 'moderate temperature increase accelerates shell growth and changes pattern formation.';
+                    } else {
+                        return prefix + 'severe heat event significantly alters growth patterns and shell density.';
+                    }
+                
+                case 'salinity':
+                    if (intensity < 0.4) {
+                        return 'A slight increase in water salinity affects shell mineralization.';
+                    } else if (intensity < 0.7) {
+                        return 'Moderate salinity change alters the shell pattern definition and coloration.';
+                    } else {
+                        return 'Dramatic salinity shift causes stress and distinct pattern banding.';
+                    }
+                
+                case 'storm':
+                    if (intensity < 0.4) {
+                        return 'Minor storm brings fresh water and slight temperature drop.';
+                    } else if (intensity < 0.7) {
+                        return 'Significant storm disrupts normal growth with temperature and salinity changes.';
+                    } else {
+                        return 'Major storm event dramatically alters water conditions, creating distinctive growth bands.';
+                    }
+                
+                case 'microplastic':
+                    if (intensity < 0.4) {
+                        return 'Low-level microplastic contamination appears in the shell structure.';
+                    } else if (intensity < 0.7) {
+                        return 'Moderate microplastic pollution is incorporated into the shell, creating small abnormalities.';
+                    } else {
+                        return 'Severe microplastic contamination event causes significant incorporation of particles into shell structure.';
+                    }
+                
+                default:
+                    return 'Environmental conditions changed, affecting shell growth.';
+            }
+        }
+
+        // Get acidification event description
+        function getAcidificationDescription(intensity, climateScenario) {
+            let prefix = '';
+            
+            // Add climate scenario context for near-future and worst-case
+            if (climateScenario === 'near-future') {
+                prefix = 'Due to increasing ocean acidification, ';
+            } else if (climateScenario === 'worst-case') {
+                prefix = 'In this extreme acidification scenario, ';
+            }
+            
+            if (intensity < 0.4) {
+                return prefix + 'mild pH decrease causes slight shell thinning.';
+            } else if (intensity < 0.7) {
+                return prefix + 'moderate acidification disrupts calcium carbonate deposition, causing pattern irregularities.';
+            } else {
+                return prefix + 'severe acidification event significantly weakens shell structure and creates visible disruptions.';
+            }
+        }
+
+        // Update growth info display
+        function updateGrowthInfo(currentRow) {
+            // Calculate age
+            const currentAge = formatTimeDisplay(currentRow);
+            
+            // Basic info
+            let infoHTML = `<h3>Growth Information</h3>`;
+            
+            if (currentRow === 0) {
+                infoHTML += `<p>Ready to start growth simulation. Press the play button to begin.</p>`;
+            } else {
+                infoHTML += `<p>Current age: ${currentAge}</p>`;
+                
+                // Get current environmental conditions
+                const currentParams = getCurrentEnvironmentalParams(currentRow);
+                infoHTML += `<p>Current water temperature: ${currentParams.temperature.toFixed(1)}°C</p>`;
+                infoHTML += `<p>Current water salinity: ${currentParams.salinity.toFixed(1)} ppt</p>`;
+                
+                // Add acidification and microplastics
+                infoHTML += `<p>Acidification level: ${(currentParams.acidification * 100).toFixed(1)}%</p>`;
+                infoHTML += `<p>Microplastic concentration: ${(currentParams.microplastics * 100).toFixed(1)}%</p>`;
+                
+                // Add climate scenario badge
+                const climateScenario = animationState.climateScenario;
+                infoHTML += `<p>Climate Scenario: <span class="climate-badge ${climateScenario}">${formatClimateScenario(climateScenario)}</span></p>`;
+                
+                // Add seasonal info
+                const seasonValue = Math.sin(currentRow * 0.05) * currentParams.seasonalVariation;
+                let season = "";
+                if (seasonValue > 0.3) season = "Summer";
+                else if (seasonValue < -0.3) season = "Winter";
+                else if (seasonValue >= 0) season = "Spring";
+                else season = "Fall";
+                
+                infoHTML += `<p>Current season: ${season}</p>`;
+                
+                // Add pattern blend info
+                const { cellular, wave, growth } = animationState.patternBlend;
+                infoHTML += `<p>Current pattern algorithm: 
+                    <span class="pattern-badge cellular">${Math.round(cellular * 100)}%</span>
+                    <span class="pattern-badge wave">${Math.round(wave * 100)}%</span>
+                    <span class="pattern-badge growth">${Math.round(growth * 100)}%</span>
+                </p>`;
+                
+                // Check for active events
+                const activeEvents = animationState.growthEvents.filter(
+                    event => currentRow >= event.startRow && currentRow <= event.endRow
+                );
+                
+                const activeAcidificationEvents = animationState.acidificationEvents.filter(
+                    event => currentRow >= event.startRow && currentRow <= event.endRow
+                );
+                
+                const activeMicroplasticEvents = animationState.microplasticEvents.filter(
+                    event => currentRow >= event.startRow && currentRow <= event.endRow
+                );
+                
+                if (activeEvents.length > 0 || activeAcidificationEvents.length > 0 || activeMicroplasticEvents.length > 0) {
+                    infoHTML += `<p>Active environmental events:</p>`;
+                    
+                    // Add growth events
+                    activeEvents.forEach(event => {
+                        const eventClass = event.type;
+                        infoHTML += `
+                            <div class="growth-event ${eventClass}">
+                                <div class="timestamp">${formatTimeDisplay(event.startRow)} - ${formatTimeDisplay(event.endRow)}</div>
+                                <strong>${event.name}</strong>
+                                <p>${event.description}</p>
+                            </div>
+                        `;
+                    });
+                    
+                    // Add acidification events
+                    activeAcidificationEvents.forEach(event => {
+                        infoHTML += `
+                            <div class="growth-event acidification">
+                                <div class="timestamp">${formatTimeDisplay(event.startRow)} - ${formatTimeDisplay(event.endRow)}</div>
+                                <strong>${event.name}</strong>
+                                <p>${event.description}</p>
+                            </div>
+                        `;
+                    });
+                    
+                    // Add microplastic events
+                    activeMicroplasticEvents.forEach(event => {
+                        infoHTML += `
+                            <div class="growth-event microplastic">
+                                <div class="timestamp">${formatTimeDisplay(event.startRow)} - ${formatTimeDisplay(event.endRow)}</div>
+                                <strong>${event.name}</strong>
+                                <p>${event.description}</p>
+                            </div>
+                        `;
+                    });
+                }
+            }
+            
+            // Update growth info
+            growthInfo.innerHTML = infoHTML;
+        }
+
+        // Update environment graph
+        function updateEnvironmentGraph(currentTime) {
+            // Clear existing points
+            temperatureLine.innerHTML = '';
+            salinityLine.innerHTML = '';
+            seasonalLine.innerHTML = '';
+            microplasticLine.innerHTML = '';
+            acidificationLine.innerHTML = '';
+            
+            // Reset climate trend
+            climateTrend.style.transform = 'none';
+            
+            // If no history, return
+            if (animationState.environmentalHistory.length === 0) return;
+            
+            // Get max width
+            const maxWidth = environmentGraph.clientWidth;
+            
+            // Get climate scenario for trend visualization
+            const climateScenario = animationState.climateScenario;
+            
+            // Initialize trend slope
+            let trendSlope = 0;
+            
+            // Set trend slope based on climate scenario
+            switch (climateScenario) {
+                case 'pre-industrial':
+                    trendSlope = 0; // No trend
+                    climateTrend.style.opacity = '0';
+                    break;
+                case 'current':
+                    trendSlope = 5; // Slight upward trend
+                    climateTrend.style.opacity = '0.3';
+                    break;
+                case 'near-future':
+                    trendSlope = 15; // Moderate upward trend
+                    climateTrend.style.opacity = '0.5';
+                    break;
+                case 'worst-case':
+                    trendSlope = 30; // Steep upward trend
+                    climateTrend.style.opacity = '0.7';
+                    break;
+            }
+            
+            // Apply climate trend rotation if not pre-industrial
+            if (climateScenario !== 'pre-industrial') {
+                climateTrend.style.transform = `rotate(${-trendSlope}deg)`;
+                climateTrend.style.transformOrigin = 'left center';
+            }
+            
+            // Add points for each environmental factor
+            animationState.environmentalHistory.forEach((data, index) => {
+                // Calculate position
+                const x = (data.row / animationState.totalRows) * maxWidth;
+                
+                // Temperature (normalized to 0-100%)
+                const temperatureY = (1 - ((data.temperature - 5) / 35)) * 100; // 5-40°C range
+                const temperaturePoint = document.createElement('div');
+                temperaturePoint.className = 'data-point temperature';
+                temperaturePoint.style.left = `${x}px`;
+                temperaturePoint.style.top = `${temperatureY}%`;
+                temperatureLine.appendChild(temperaturePoint);
+                
+                // Salinity (normalized to 0-100%)
+                const salinityY = (1 - ((data.salinity - 10) / 30)) * 100; // 10-40 ppt range
+                const salinityPoint = document.createElement('div');
+                salinityPoint.className = 'data-point salinity';
+                salinityPoint.style.left = `${x}px`;
+                salinityPoint.style.top = `${salinityY}%`;
+                salinityLine.appendChild(salinityPoint);
+                
+                // Seasonal variation (already 0-1)
+                const seasonalY = (1 - (Math.sin(data.row * 0.05) * data.seasonalVariation + 1) / 2) * 100;
+                const seasonalPoint = document.createElement('div');
+                seasonalPoint.className = 'data-point seasonal';
+                seasonalPoint.style.left = `${x}px`;
+                seasonalPoint.style.top = `${seasonalY}%`;
+                seasonalLine.appendChild(seasonalPoint);
+                
+                // Microplastics (normalized to 0-100%)
+                if (data.microplastics !== undefined) {
+                    const microplasticY = (1 - data.microplastics) * 100;
+                    const microplasticPoint = document.createElement('div');
+                    microplasticPoint.className = 'data-point microplastic';
+                    microplasticPoint.style.left = `${x}px`;
+                    microplasticPoint.style.top = `${microplasticY}%`;
+                    microplasticLine.appendChild(microplasticPoint);
+                }
+                
+                // Acidification (normalized to 0-100%)
+                if (data.acidification !== undefined) {
+                    const acidificationY = (1 - data.acidification) * 100;
+                    const acidificationPoint = document.createElement('div');
+                    acidificationPoint.className = 'data-point acidification';
+                    acidificationPoint.style.left = `${x}px`;
+                    acidificationPoint.style.top = `${acidificationY}%`;
+                    acidificationLine.appendChild(acidificationPoint);
+                }
             });
             
-            // Add microplastic events
-            activeMicroplasticEvents.forEach(event => {
-                infoHTML += `
-                    <div class="growth-event microplastic">
-                        <div class="timestamp">${formatTimeDisplay(event.startRow)} - ${formatTimeDisplay(event.endRow)}</div>
-                        <strong>${event.name}</strong>
-                        <p>${event.description}</p>
-                    </div>
-                `;
+            // Add current time marker if provided
+            if (currentTime !== undefined) {
+                const markerX = (currentTime / animationState.totalRows) * maxWidth;
+                
+                // Add marker
+                const marker = document.createElement('div');
+                marker.style.position = 'absolute';
+                marker.style.left = `${markerX}px`;
+                marker.style.top = '0';
+                marker.style.height = '100%';
+                marker.style.width = '1px';
+                marker.style.backgroundColor = 'red';
+                marker.style.zIndex = '10';
+                environmentGraph.appendChild(marker);
+                
+                // Remove after a short delay (to prevent accumulation)
+                setTimeout(() => {
+                    if (marker.parentNode) {
+                        marker.parentNode.removeChild(marker);
+                    }
+                }, 100);
+            }
+        }
+
+        // Create age bands
+        function createAgeBands() {
+            // Clear existing bands
+            ageBands.innerHTML = '';
+            
+            // Calculate number of years
+            const years = animationState.growthYears;
+            
+            // Create a band for each year
+            for (let i = 0; i < years; i++) {
+                const band = document.createElement('div');
+                band.className = 'age-band';
+                band.style.backgroundColor = `hsl(${200 + (i * 15)}, 70%, ${90 - (i * 5)}%)`;
+                ageBands.appendChild(band);
+            }
+        }
+
+        // Update age bands based on current growth
+        function updateAgeBands(currentRow) {
+            // Calculate current progress
+            const progress = currentRow / animationState.totalRows;
+            
+            // Update each band
+            const bands = ageBands.querySelectorAll('.age-band');
+            bands.forEach((band, index) => {
+                const bandStart = index / bands.length;
+                const bandEnd = (index + 1) / bands.length;
+                
+                if (progress >= bandEnd) {
+                    // This band is complete
+                    band.style.opacity = 1;
+                } else if (progress >= bandStart) {
+                    // This band is in progress
+                    const bandProgress = (progress - bandStart) / (bandEnd - bandStart);
+                    band.style.opacity = bandProgress;
+                } else {
+                    // This band has not started
+                    band.style.opacity = 0.2;
+                }
             });
         }
-    }
-    
-    // Update growth info
-    growthInfo.innerHTML = infoHTML;
-}
-
-// Update environment graph
-function updateEnvironmentGraph(currentTime) {
-    // Clear existing points
-    temperatureLine.innerHTML = '';
-    salinityLine.innerHTML = '';
-    seasonalLine.innerHTML = '';
-    microplasticLine.innerHTML = '';
-    acidificationLine.innerHTML = '';
-    
-    // Reset climate trend
-    climateTrend.style.transform = 'none';
-    
-    // If no history, return
-    if (animationState.environmentalHistory.length === 0) return;
-    
-    // Get max width
-    const maxWidth = environmentGraph.clientWidth;
-    
-    // Get climate scenario for trend visualization
-    const climateScenario = animationState.climateScenario;
-    
-    // Initialize trend slope
-    let trendSlope = 0;
-    
-    // Set trend slope based on climate scenario
-    switch (climateScenario) {
-        case 'pre-industrial':
-            trendSlope = 0; // No trend
-            climateTrend.style.opacity = '0';
-            break;
-        case 'current':
-            trendSlope = 5; // Slight upward trend
-            climateTrend.style.opacity = '0.3';
-            break;
-        case 'near-future':
-            trendSlope = 15; // Moderate upward trend
-            climateTrend.style.opacity = '0.5';
-            break;
-        case 'worst-case':
-            trendSlope = 30; // Steep upward trend
-            climateTrend.style.opacity = '0.7';
-            break;
-    }
-    
-    // Apply climate trend rotation if not pre-industrial
-    if (climateScenario !== 'pre-industrial') {
-        climateTrend.style.transform = `rotate(${-trendSlope}deg)`;
-        climateTrend.style.transformOrigin = 'left center';
-    }
-    
-    // Add points for each environmental factor
-    animationState.environmentalHistory.forEach((data, index) => {
-        // Calculate position
-        const x = (data.row / animationState.totalRows) * maxWidth;
-        
-        // Temperature (normalized to 0-100%)
-        const temperatureY = (1 - ((data.temperature - 5) / 35)) * 100; // 5-40°C range
-        const temperaturePoint = document.createElement('div');
-        temperaturePoint.className = 'data-point temperature';
-        temperaturePoint.style.left = `${x}px`;
-        temperaturePoint.style.top = `${temperatureY}%`;
-        temperatureLine.appendChild(temperaturePoint);
-        
-        // Salinity (normalized to 0-100%)
-        const salinityY = (1 - ((data.salinity - 10) / 30)) * 100; // 10-40 ppt range
-        const salinityPoint = document.createElement('div');
-        salinityPoint.className = 'data-point salinity';
-        salinityPoint.style.left = `${x}px`;
-        salinityPoint.style.top = `${salinityY}%`;
-        salinityLine.appendChild(salinityPoint);
-        
-        // Seasonal variation (already 0-1)
-        const seasonalY = (1 - (Math.sin(data.row * 0.05) * data.seasonalVariation + 1) / 2) * 100;
-        const seasonalPoint = document.createElement('div');
-        seasonalPoint.className = 'data-point seasonal';
-        seasonalPoint.style.left = `${x}px`;
-        seasonalPoint.style.top = `${seasonalY}%`;
-        seasonalLine.appendChild(seasonalPoint);
-        
-        // Microplastics (normalized to 0-100%)
-        if (data.microplastics !== undefined) {
-            const microplasticY = (1 - data.microplastics) * 100;
-            const microplasticPoint = document.createElement('div');
-            microplasticPoint.className = 'data-point microplastic';
-            microplasticPoint.style.left = `${x}px`;
-            microplasticPoint.style.top = `${microplasticY}%`;
-            microplasticLine.appendChild(microplasticPoint);
-        }
-        
-        // Acidification (normalized to 0-100%)
-        if (data.acidification !== undefined) {
-            const acidificationY = (1 - data.acidification) * 100;
-            const acidificationPoint = document.createElement('div');
-            acidificationPoint.className = 'data-point acidification';
-            acidificationPoint.style.left = `${x}px`;
-            acidificationPoint.style.top = `${acidificationY}%`;
-            acidificationLine.appendChild(acidificationPoint);
-        }
-    });
-    
-    // Add current time marker if provided
-    if (currentTime !== undefined) {
-        const markerX = (currentTime / animationState.totalRows) * maxWidth;
-        
-        // Add marker
-        const marker = document.createElement('div');
-        marker.style.position = 'absolute';
-        marker.style.left = `${markerX}px`;
-        marker.style.top = '0';
-        marker.style.height = '100%';
-        marker.style.width = '1px';
-        marker.style.backgroundColor = 'red';
-        marker.style.zIndex = '10';
-        environmentGraph.appendChild(marker);
-        
-        // Remove after a short delay (to prevent accumulation)
-        setTimeout(() => {
-            if (marker.parentNode) {
-                marker.parentNode.removeChild(marker);
-            }
-        }, 100);
-    }
-}
-
-// Create age bands
-function createAgeBands() {
-    // Clear existing bands
-    ageBands.innerHTML = '';
-    
-    // Calculate number of years
-    const years = animationState.growthYears;
-    
-    // Create a band for each year
-    for (let i = 0; i < years; i++) {
-        const band = document.createElement('div');
-        band.className = 'age-band';
-        band.style.backgroundColor = `hsl(${200 + (i * 15)}, 70%, ${90 - (i * 5)}%)`;
-        ageBands.appendChild(band);
-    }
-}
-
-// Update age bands based on current growth
-function updateAgeBands(currentRow) {
-    // Calculate current progress
-    const progress = currentRow / animationState.totalRows;
-    
-    // Update each band
-    const bands = ageBands.querySelectorAll('.age-band');
-    bands.forEach((band, index) => {
-        const bandStart = index / bands.length;
-        const bandEnd = (index + 1) / bands.length;
-        
-        if (progress >= bandEnd) {
-            // This band is complete
-            band.style.opacity = 1;
-        } else if (progress >= bandStart) {
-            // This band is in progress
-            const bandProgress = (progress - bandStart) / (bandEnd - bandStart);
-            band.style.opacity = bandProgress;
-        } else {
-            // This band has not started
-            band.style.opacity = 0.2;
-        }
-    });
-}
-    <script>
+    </script>
 </body>
 </html>
